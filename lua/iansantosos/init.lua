@@ -1,3 +1,3 @@
 require("iansantosos.vimset")
-require("iansantosos.remap")
+require("iansantosos.keymap")
 require("iansantosos.lazy")

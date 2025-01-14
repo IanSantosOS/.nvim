@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader><leader>", "<cmd>so<CR>", { desc = "Recarrega o arquivo de configuração atual" })
 
-vim.keymap.set("n", "<leader>fe", vim.cmd.Ex, { desc = "Abre o Netrw tree" })
+vim.keymap.set("n", "<leader>fe", ":Lex!<CR>", { desc = "Abre o Netrw tree" })
 
 vim.keymap.set("n", "<leader>lsp", ":LspRestart<CR>", { desc = "Reinicia o LSP" })
 
@@ -12,7 +12,6 @@ vim.keymap.set({ "n", "v" }, "<leader>/", "<ESC>:let @/=''<CR>", { silent = true
 vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>sS", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left><Left>]])
 
-vim.keymap.set("i", "jj", "<ESC>");
 vim.keymap.set("i", "jk", "<ESC>:update<CR>");
 vim.keymap.set("i", "kj", "<ESC>:update<CR>");
 
@@ -29,27 +28,22 @@ vim.keymap.set({ "n", "v" }, "<leader>t8", ":lua ToggleColorColumn()<CR>", { sil
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Mover a seleção atual para baixo" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Mover a seleção atual para cima" })
 
-vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { desc = "Mover para o painel de cima" })
-vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { desc = "Mover para o painel de baixo" })
-vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "Mover para o painel da esquerda" })
-vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Mover para o painel da direita" })
-
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Centraliza o cursor enquanto move a tela para cima" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Centraliza o cursor enquanto move a tela para baixo" })
 
 vim.keymap.set("n", "n", "nzzzv", { desc = "Salta para a ocorrência posterior da busca (com o cursor centralizado)" })
-vim.keymap.set("n", "n", "Nzzzv", { desc = "Salta para a ocorrência anterior da busca (com o cursor centralizado)" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Salta para a ocorrência anterior da busca (com o cursor centralizado)" })
 
 -- vim.keymap.set("n", "Q", "<nop>") -- Desativa o keymap padrão da tecla Q
 
-vim.keymap.set("x", "<leader>p", [["_dP]],          { desc = "Substitui o que está selecionado pelo que está no clipboard" })
-vim.keymap.set("n", "<leader>Y", [["+Y]],           { desc = "Copia do cursor atual até o final da linha para o clipboard do sistema."})
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]],  { desc = "Copia para o clipboard do sistema" })
-vim.keymap.set({ "n", "v" }, "<leader>dd", [["_d]], { desc = "Deleta sem ir para o cliboard" })
+vim.keymap.set("x",          "<leader>p",  [["_dP]], { desc = "Substitui o que está selecionado pelo que está no clipboard" })
+vim.keymap.set("n",          "<leader>Y",  [["+Y]],  { desc = "Copia do cursor atual até o final da linha para o clipboard do sistema."})
+vim.keymap.set({ "n", "v" }, "<leader>y",  [["+y]],  { desc = "Copia para o clipboard do sistema" })
+vim.keymap.set({ "n", "v" }, "<leader>dd", [["_d]],  { desc = "Deleta sem ir para o cliboard" })
 
 -- TODO: colocar descrição nesses comandos
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-k>",     "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>",     "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 

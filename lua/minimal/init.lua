@@ -12,7 +12,10 @@ vim.opt.updatetime = 50           -- Define o intervalo (ms) para ações autom�
 
 vim.g.netrw_banner = 0            -- Desativa o banner do netrw
 vim.g.netrw_altv = 1              -- Arquivos abertos usando "v" irão abrir a direita do netrw
--- vim.cmd('set path+=**')        -- Procura recursivamente dentro do diretório atual
+vim.g.netrw_liststyle = 3         -- Tree view
+vim.g.netrw_winsize = 20          -- Window size
+
+vim.cmd('set path+=**')           -- Procura recursivamente
 
 vim.opt.splitbelow = true         -- Define a criação de paineis (janelas, window, panels) para baixo
 vim.opt.splitright = true         -- Define a criação de paineis (janelas, window, panels) para a direita
@@ -23,7 +26,7 @@ vim.opt.fileencoding = "utf-8"    -- Padrão UTF-8
 vim.opt.number = true             -- Ativa a coluna de números do lado esquerdo
 vim.opt.relativenumber = true     -- Ativa o relative number
 vim.opt.signcolumn = "yes"        -- Sempre exibir um espaço do lado esquerdo da coluna de números para marcadores visuais
--- vim.opt.colorcolumn = '80'     -- Uma coluna visual para delimitar a quantidade de caracteres
+vim.opt.colorcolumn = '80'     -- Uma coluna visual para delimitar a quantidade de caracteres
 
 vim.opt.wrap = false              -- Desativa a quebra de linha automática
 vim.opt.scrolloff = 8             -- Distância para ativar a rolagem vertical do texto
@@ -84,17 +87,56 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 --[ [ KEYMAPS ] ]--
 
+-- General
+
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open Netrw tree" })
+vim.keymap.set("n", "<leader><leader>", "<cmd>so<CR>", { desc = "Recarrega o arquivo de configuração atual" })
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")  -- Mover a linha atual para baixo
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")  -- Mover a linha atual para cima
+vim.keymap.set("n", "<leader>fe", ":Lex!<CR>", { desc = "Abre o Netrw tree" })
 
-vim.keymap.set("n", "<C-k>", ":wincmd k<CR>") -- Mover para o painel/janela de cima
-vim.keymap.set("n", "<C-j>", ":wincmd j<CR>") -- Mover para o painel/janela de baixo
-vim.keymap.set("n", "<C-h>", ":wincmd h<CR>") -- Mover para o painel/janela da esquerda
-vim.keymap.set("n", "<C-l>", ":wincmd l<CR>") -- Mover para o painel/janela da direita
+vim.keymap.set({ "n", "v" }, "<leader>/", "<ESC>:let @/=''<CR>", { silent = true, desc = "Remove os resultados da busca com o /" })
+
+vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<ESC>:update<CR>", { desc = "Salva o arquivo utilizando :update" })
+
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Junta a linha atual com a linha de baixo mantendo o cursor na posição original" })
+
+vim.keymap.set({ "n", "v" }, "<leader>t8", ":lua ToggleColorColumn()<CR>", { silent = true, desc = "Ativa/Desativa a coluna de 80 caracteres" })
+
+vim.keymap.set("i", "jk", "<ESC>:update<CR>");
+vim.keymap.set("i", "kj", "<ESC>:update<CR>");
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Mover a seleção atual para baixo" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Mover a seleção atual para cima" })
+
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Centraliza o cursor enquanto move a tela para cima" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Centraliza o cursor enquanto move a tela para baixo" })
+
+vim.keymap.set("n", "n", "nzzzv", { desc = "Salta para a ocorrência posterior da busca (com o cursor centralizado)" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Salta para a ocorrência anterior da busca (com o cursor centralizado)" })
+
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { desc = "Mover para o painel de cima" })
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { desc = "Mover para o painel de baixo" })
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "Mover para o painel da esquerda" })
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Mover para o painel da direita" })
+
+vim.keymap.set("x",          "<leader>p",  [["_dP]], { desc = "Substitui o que está selecionado pelo que está no clipboard" })
+vim.keymap.set("n",          "<leader>Y",  [["+Y]],  { desc = "Copia do cursor atual até o final da linha para o clipboard do sistema."})
+vim.keymap.set({ "n", "v" }, "<leader>y",  [["+y]],  { desc = "Copia para o clipboard do sistema" })
+vim.keymap.set({ "n", "v" }, "<leader>dd", [["_d]],  { desc = "Deleta sem ir para o cliboard" })
+
+function ToggleColorColumn()
+    if vim.wo.colorcolumn == "80" then
+        vim.wo.colorcolumn = "0"
+    else
+        vim.wo.colorcolumn = "80"
+    end
+end
+
+-- Keymaps created just for this file
+
+vim.keymap.set("n", "<leader>fp", ":find ", { desc = "Go to file" });
+vim.keymap.set("n", "<leader>b",  ":b ",    { desc = "Go to file" });
 
 --[ [ STATUSLINE ] ]--
 --[[

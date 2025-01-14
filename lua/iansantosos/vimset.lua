@@ -19,7 +19,10 @@ vim.opt.updatetime = 50           -- Define o intervalo (ms) para ações autom�
 
 vim.g.netrw_banner = 0            -- Desativa o banner do netrw
 vim.g.netrw_altv = 1              -- Arquivos abertos usando "v" irão abrir a direita do netrw
--- vim.cmd('set path+=**')        -- Procura recursivamente dentro do diretório atual
+vim.g.netrw_liststyle = 3         -- Tree view
+vim.g.netrw_winsize = 20          -- Window size
+
+vim.cmd('set path+=**')           -- Procura recursivamente
 
 vim.opt.splitbelow = true         -- Define a criação de paineis (janelas, window, panels) para baixo
 vim.opt.splitright = true         -- Define a criação de paineis (janelas, window, panels) para a direita
