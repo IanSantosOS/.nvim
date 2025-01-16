@@ -22,6 +22,7 @@ return {
                 "cssls",
                 "emmet_ls",
             },
+            automatic_installation = false,
             handlers = {
                 function(server_name)
                     require("lspconfig")[server_name].setup({

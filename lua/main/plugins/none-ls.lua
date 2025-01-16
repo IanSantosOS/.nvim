@@ -11,7 +11,5 @@ return {
                 null_ls.builtins.diagnostics.markdownlint,
             },
         })
-
-        vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
     end,
 }

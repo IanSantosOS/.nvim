@@ -27,7 +27,7 @@ vim.cmd('set path+=**')           -- Procura recursivamente
 vim.opt.splitbelow = true         -- Define a criação de paineis (janelas, window, panels) para baixo
 vim.opt.splitright = true         -- Define a criação de paineis (janelas, window, panels) para a direita
 
-vim.opt.syntax = "on"             -- Ativa a syntax padrão do nvim
+vim.opt.syntax = "off"            -- Desativa a syntax padrão do nvim (tenho o treesitter)
 vim.opt.fileencoding = "utf-8"    -- Padrão UTF-8
 
 vim.opt.number = true             -- Ativa a coluna de números do lado esquerdo
@@ -40,7 +40,7 @@ vim.opt.scrolloff = 8             -- Distância para ativar a rolagem vertical d
 vim.opt.sidescrolloff = 8         -- Distância para ativar a rolagem horizontal do texto
 
 vim.opt.tabstop = 4               -- Define que 1 Tab = 4 Espaços
-vim.opt.softtabstop = 0           -- Os espaços inseridos quando aperta Tab ou BaskSpace será o mesmo do tabstop
+vim.opt.softtabstop = 0           -- Os espaços inseridos quando aperta Tab ou BackSpace será o mesmo do tabstop
 vim.opt.shiftwidth = 4            -- Espaços inseridos ao utilizar a tecla de recuo
 vim.opt.expandtab = true          -- Transforma Tab em Espaços
 
@@ -89,4 +89,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
         vim.highlight.on_yank()
     end,
+})
+
+-- Numbers on the side of the nvim builtin terminal are weird
+vim.api.nvim_create_autocmd("TermOpen", {
+    group = vim.api.nvim_create_augroup("custom-term-opn", { clear = true }),
+    callback = function ()
+        vim.opt.number = false
+        vim.opt.relativenumber = false
+    end
 })

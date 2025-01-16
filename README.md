@@ -4,14 +4,17 @@ Repositório Neovim -> <https://github.com/neovim/neovim>
 
 ## TODO
 
-- arrumar os keymaps
 - adicionar um comentário em cada um dos keymaps criados
 - mudar o tipo de dropdown do telescope no current_buff
+- mudar a minha configuração inteira para inglês
+- atualizar a lista de plugins
+- verificar as boas práticas de plugin na [documentação developer](https://lazy.folke.io/developers)
 
-- fazer 3 tipos de configs:
-  - Padrão -> a configuração que utilizo na minha máquina pessoal
-  - Minimal -> apenas as configurações que julgo necessárias
-  - VimLike -> Mesma configuração do meu VIM porém em lua
+- fazer 4 tipos de configs:
+  - main -> A configuração que utilizo na minha máquina pessoal
+  - minimal -> Apenas as configurações e plugins que julgo necessários
+  - notepad -> Configurações para utilizar nvim como o meu notepad
+  - no-plugin -> Mesma configuração do meu VIM porém em lua
 
 ## Pacotes
 
@@ -64,7 +67,7 @@ Package Manager > <https://github.com/folke/lazy.nvim>
 
 ### Comando
 
-    git clone https://github.com/IanSantosOS/neovim-config.git nvim
+    git clone https://github.com/IanSantosOS/.nvim.git nvim
 
 ### Diretório
 
@@ -114,6 +117,7 @@ Linux:
 - [The Only Video You Need to Get Started with Neovim](https://www.youtube.com/watch?v=m8C0Cq9Uv9o)
 - [My neovim autocomplete setup: explained](https://www.youtube.com/watch?v=22mrSjknDHI)
 - [I Rewrote My Entire Neovim Config...](https://www.youtube.com/watch?v=kJVqxFnhIuw)
+- [Playlist | Advent of Neovim](https://www.youtube.com/playlist?list=PLep05UYkc6wTyBe7kPjQFWVXTlhKeQejM)
 
 #### Theprimeagen
 
