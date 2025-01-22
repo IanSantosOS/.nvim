@@ -1,33 +1,30 @@
---[[
--- put every built-in plugin you wanna disable here
-local builtin_plugs = {
-    '2html_plugin',
-    'getscript',
-    'getscriptPlugin',
-    'gzip',
+--[ [ VIMSET ] ]--
+
+-- [ Desabling builtin plugins ] --
+local builtin_plugins = {
+    'netrw',
+    'netrwPlugin',
+    -- 'netrwSettings',
+    -- 'netrwFileHandlers',
+    -- 'netrw_gitignore',
 }
 
-for i = 1, #builtin_plugs do
-  g[ 'loaded_' .. builtin_plugs[i] ] true
+for i = 1, #builtin_plugins do
+    vim.g[ 'loaded_' .. builtin_plugins[i] ] = true
 end
---]]
+
 
 vim.opt.compatible = false        -- Desative o modo de compatibilidade com o VI
 
 vim.opt.termguicolors = true      -- Permite o uso de cores 24-bit
 vim.opt.updatetime = 50           -- Define o intervalo (ms) para ações automáticas (ex.: plugins, eventos CursorHold)
 
-vim.g.netrw_banner = 0            -- Desativa o banner do netrw
-vim.g.netrw_altv = 1              -- Arquivos abertos usando "v" irão abrir a direita do netrw
-vim.g.netrw_liststyle = 3         -- Tree view
-vim.g.netrw_winsize = 20          -- Window size
-
 vim.cmd('set path+=**')           -- Procura recursivamente
 
 vim.opt.splitbelow = true         -- Define a criação de paineis (janelas, window, panels) para baixo
 vim.opt.splitright = true         -- Define a criação de paineis (janelas, window, panels) para a direita
 
-vim.opt.syntax = "off"            -- Desativa a syntax padrão do nvim (tenho o treesitter)
+vim.opt.syntax = "on"             -- Ativa a syntax padrão do nvim
 vim.opt.fileencoding = "utf-8"    -- Padrão UTF-8
 
 vim.opt.number = true             -- Ativa a coluna de números do lado esquerdo
@@ -89,13 +86,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
         vim.highlight.on_yank()
     end,
-})
-
--- Numbers on the side of the nvim builtin terminal are weird
-vim.api.nvim_create_autocmd("TermOpen", {
-    group = vim.api.nvim_create_augroup("custom-term-opn", { clear = true }),
-    callback = function ()
-        vim.opt.number = false
-        vim.opt.relativenumber = false
-    end
 })

@@ -1,5 +1,4 @@
 return {
-    "mbbill/undotree",
     "christoomey/vim-tmux-navigator",
     {
         "theprimeagen/vim-be-good",

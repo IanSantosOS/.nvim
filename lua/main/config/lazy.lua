@@ -1,3 +1,5 @@
+--[ [ LAZY PACKAGE MANAGER ] ]--
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -26,6 +28,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         { import = "main.plugins" },
+        { import = "main.plugins.mini" },
     },
     change_detection = { notify = false },
 })

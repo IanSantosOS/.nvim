@@ -2,4 +2,5 @@
 -- testar outras configurações de outras pessoas de uma maneira mais prática
 
 require("main")
+-- require("test")
 -- require("minimal")

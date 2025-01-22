@@ -31,10 +31,5 @@ return {
                 end,
             },
         })
-
-        vim.keymap.set("n", "<leader>dh", vim.lsp.buf.hover, {})
-        vim.keymap.set("n", "<leader>df", vim.lsp.buf.definition, {})
-        vim.keymap.set("n", "<leader>dr", vim.lsp.buf.references, {})
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
     end,
 }

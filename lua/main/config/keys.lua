@@ -1,13 +1,23 @@
--- Lembre-se <C-[> é igual a <Esc>
+--[ [ KEYMAPS ] ]--
+
 vim.g.mapleader = " "
 local set = vim.keymap.set
 
-set("n", "<leader><leader>", ":source %<CR>", { desc = "Recarrega o arquivo de configuração atual" })
+set("n", "<leader><leader>L", ":source %<CR>", { silent = true })
+set("n", "<leader><leader>l", ":.lua<CR>",     { silent = true })
+set("v", "<leader><leader>l", ":lua<CR>",      { silent = true })
 
 set("n", "<leader>fe", ":Lex!<CR>", { desc = "Abre o Netrw tree" })
 
-set("n", "<leader>ff", vim.lsp.buf.format, { desc = "Formata o buffer atual" })
+set("n", "<leader>fp", ":find ", { desc = "Go to file" });
+set("n", "<leader>b",  ":b ",    { desc = "Go to file" });
 
+set("n", "<leader>ff", vim.lsp.buf.format, { desc = "Formata o buffer atual" })
+set("n", "<leader>dh", vim.lsp.buf.hover, {})
+set("n", "<leader>df", vim.lsp.buf.definition, {})
+set("n", "<leader>dr", vim.lsp.buf.references, {})
+set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+-- Talvez o lugar desse daqui seja no `keys_plugins.lua`
 set("n", "<leader>lsp", ":LspRestart<CR>", { desc = "Reinicia o LSP" })
 
 set({ "n", "v" }, "<leader>/", "<ESC>:let @/=''<CR>", { silent = true, desc = "Remove os resultados da busca com o /" })
@@ -15,14 +25,13 @@ set({ "n", "v" }, "<leader>/", "<ESC>:let @/=''<CR>", { silent = true, desc = "R
 set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 set("n", "<leader>sS", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left><Left>]])
 
-set("i", "jk", "<ESC>:update<CR>");
+set({ "n", "v", "i" }, "<C-s>", "<ESC>:update<CR>", { desc = "Salva o arquivo utilizando :update" })
+set("i", "jk", "<ESC>");
 set("i", "kj", "<ESC>:update<CR>");
 
 -- For now I prefer to utilize tmux to handle this
 -- maybe in the future I go back to this
 -- set("n", "<leader>tt", ":lua OpenTerminal()<CR>", { desc = "Open terminal" })
-
-set({ "n", "v", "i" }, "<C-s>", "<ESC>:update<CR>", { desc = "Salva o arquivo utilizando :update" })
 
 set("n", "J", "mzJ`z", { desc = "Junta a linha atual com a linha de baixo mantendo o cursor na posição original" })
 
@@ -37,6 +46,10 @@ set("n", "<C-d>", "<C-d>zz", { desc = "Centraliza o cursor enquanto move a tela 
 set("n", "n", "nzzzv", { desc = "Salta para a ocorrência posterior da busca (com o cursor centralizado)" })
 set("n", "N", "Nzzzv", { desc = "Salta para a ocorrência anterior da busca (com o cursor centralizado)" })
 
+set("n", "<C-k>", ":wincmd k<CR>", { silent = true, desc = "Mover para o painel de cima" })
+set("n", "<C-j>", ":wincmd j<CR>", { silent = true, desc = "Mover para o painel de baixo" })
+set("n", "<C-h>", ":wincmd h<CR>", { silent = true, desc = "Mover para o painel da esquerda" })
+set("n", "<C-l>", ":wincmd l<CR>", { silent = true, desc = "Mover para o painel da direita" })
 set("n", "<leader>w",  "<C-w>",       { silent = true, desc = "Window prefix command" })
 set("n", "<leader>wh", ":vsplit<CR>", { silent = true, desc = "Window split horizontally" })
 set("n", "<leader>wv", ":split<CR>",  { silent = true, desc = "Window split vertically" })
@@ -48,9 +61,11 @@ set("n",          "<leader>Y",  [["+Y]],  { desc = "Copia do cursor atual até o
 set({ "n", "v" }, "<leader>y",  [["+y]],  { desc = "Copia para o clipboard do sistema" })
 set({ "n", "v" }, "<leader>dd", [["_d]],  { desc = "Deleta sem ir para o cliboard" })
 
--- TODO: colocar descrição nesses comandos
 set("n", "<leader>k", ":cnext<CR>zz")
 set("n", "<leader>j", ":cprev<CR>zz")
+
+
+--[ Functions ]--
 
 function ToggleColorColumn()
     if vim.wo.colorcolumn == "80" then

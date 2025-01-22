@@ -2,10 +2,9 @@
 
 Repositório Neovim -> <https://github.com/neovim/neovim>
 
-## TODO
+## Things I have to do
 
 - adicionar um comentário em cada um dos keymaps criados
-- mudar o tipo de dropdown do telescope no current_buff
 - mudar a minha configuração inteira para inglês
 - atualizar a lista de plugins
 - verificar as boas práticas de plugin na [documentação developer](https://lazy.folke.io/developers)
@@ -48,36 +47,31 @@ Package Manager > <https://github.com/folke/lazy.nvim>
 
 - plugins do [Tpope](https://github.com/tpope)
 - neotest -> testes dentro do neovim
-- nvim-tmux-navigation -> nvim + tmux
 - folke/trouble.nvim -> ferramenta para erros no código
 - folke/zen-mode.nvim -> codar no nvim sem distração
 - m4xshen/hardtime.nvim -> desabilita certas funções para tirar seus mals habitos no neovim
 - tris203/precognition.nvim -> mostra dicas de navegação
-- oil.nvim
-- mini.hipatterns
 - inc-rename.nvim
 - refactoring.nvim
-- whichkey
 - vim-surround
 - nvim-notify
 - nvim-autopairs
+- MeanderingProgrammer/harpoon-core.nvim
 - folke/noice.nvim
 
 ## Setup
 
-### Comando
-
-    git clone https://github.com/IanSantosOS/.nvim.git nvim
-
-### Diretório
-
 Windows:
 
-    ~/AppData/Local/nvim/
+```cmd
+git clone https://github.com/IanSantosOS/.nvim.git $HOME\AppData\Local\nvim
+```
 
 Linux:
 
-    ~/.config/nvim/
+```sh
+git clone https://github.com/IanSantosOS/.nvim.git $HOME/.config/nvim
+```
 
 ## Referências
 
@@ -94,6 +88,7 @@ Linux:
 - [Typecraft](https://github.com/cpow/neovim-for-newbs)
 - [TJ DeVries](https://github.com/tjdevries/config.nvim)
 - [ThePrimeagen](https://github.com/ThePrimeagen/init.lua)
+- [linkarzu](https://github.com/linkarzu/dotfiles-latest/tree/main/neovim/neobean)
 - [Linux Dabler](https://gitlab.com/linuxdabbler/dotfiles/-/blob/main/.config/nvim/init.lua)
 
 ### Vídeos
