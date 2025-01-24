@@ -1,3 +1,14 @@
+--[ [ REPOSITORIES ] ]--
+
+-- LSP
+-- https://github.com/neovim/nvim-lspconfig
+
+-- MASON
+-- https://github.com/williamboman/mason.nvim
+-- https://github.com/williamboman/mason-lspconfig.nvim
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     "neovim/nvim-lspconfig",
     dependencies = {

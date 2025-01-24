@@ -1,3 +1,9 @@
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/laytan/cloak.nvim
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     "laytan/cloak.nvim",
     lazy = false,

@@ -1,3 +1,12 @@
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/nvimtools/none-ls.nvim
+
+-- This is a fork of the original repository:
+-- https://github.com/jose-elias-alvarez/null-ls.nvim
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     "nvimtools/none-ls.nvim",
     lazy = false,

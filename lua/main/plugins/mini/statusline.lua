@@ -1,3 +1,9 @@
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/echasnovski/mini.statusline
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     "echasnovski/mini.statusline",
     version = false,

@@ -1,3 +1,9 @@
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/MeanderingProgrammer/render-markdown.nvim
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     'MeanderingProgrammer/render-markdown.nvim',
     opts = {

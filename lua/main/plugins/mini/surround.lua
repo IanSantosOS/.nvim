@@ -1,3 +1,9 @@
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/echasnovski/mini.surround
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     "echasnovski/mini.surround",
     version = false,

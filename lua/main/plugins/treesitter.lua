@@ -1,3 +1,9 @@
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/nvim-treesitter/nvim-treesitter
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",

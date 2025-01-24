@@ -1,3 +1,9 @@
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/theprimeagen/harpoon
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     "theprimeagen/harpoon",
     branch = "harpoon2",

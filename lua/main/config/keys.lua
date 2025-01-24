@@ -40,19 +40,39 @@ set({ "n", "v" }, "<leader>t8", ":lua ToggleColorColumn()<CR>", { silent = true,
 set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Mover a seleção atual para baixo" })
 set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Mover a seleção atual para cima" })
 
-set("n", "<C-u>", "<C-u>zz", { desc = "Centraliza o cursor enquanto move a tela para cima" })
-set("n", "<C-d>", "<C-d>zz", { desc = "Centraliza o cursor enquanto move a tela para baixo" })
+set({ "n", "v" }, "<C-u>", "<C-u>zz", { desc = "Centraliza o cursor enquanto move a tela para cima" })
+set({ "n", "v" }, "<C-d>", "<C-d>zz", { desc = "Centraliza o cursor enquanto move a tela para baixo" })
+-- set({ "n", "v" }, "j", "jzz", {})
+-- set({ "n", "v" }, "k", "kzz", {})
 
 set("n", "n", "nzzzv", { desc = "Salta para a ocorrência posterior da busca (com o cursor centralizado)" })
 set("n", "N", "Nzzzv", { desc = "Salta para a ocorrência anterior da busca (com o cursor centralizado)" })
+
+--[ WINDOWS ]--
+
+set("n", "<leader>w",  "<C-w>",       { silent = true, desc = "Window prefix command" })
+set("n", "<leader>wh", ":vsplit<CR>", { silent = true, desc = "Window split horizontally" })
+set("n", "<leader>wv", ":split<CR>",  { silent = true, desc = "Window split vertically" })
+
+set("n", "<C-M-k>", ":resize +5<CR>",           { silent = true })
+set("n", "<C-M-j>", ":resize -5<CR>",           { silent = true })
+set("n", "<C-M-h>", ":vertical resize -10<CR>", { silent = true })
+set("n", "<C-M-l>", ":vertical resize +10<CR>", { silent = true })
+
+set("n", "<C-M-Up>",    ":resize +5<CR>",           { silent = true })
+set("n", "<C-M-Down>",  ":resize -5<CR>",           { silent = true })
+set("n", "<C-M-Left>",  ":vertical resize -10<CR>", { silent = true })
+set("n", "<C-M-Right>", ":vertical resize +10<CR>", { silent = true })
 
 set("n", "<C-k>", ":wincmd k<CR>", { silent = true, desc = "Mover para o painel de cima" })
 set("n", "<C-j>", ":wincmd j<CR>", { silent = true, desc = "Mover para o painel de baixo" })
 set("n", "<C-h>", ":wincmd h<CR>", { silent = true, desc = "Mover para o painel da esquerda" })
 set("n", "<C-l>", ":wincmd l<CR>", { silent = true, desc = "Mover para o painel da direita" })
-set("n", "<leader>w",  "<C-w>",       { silent = true, desc = "Window prefix command" })
-set("n", "<leader>wh", ":vsplit<CR>", { silent = true, desc = "Window split horizontally" })
-set("n", "<leader>wv", ":split<CR>",  { silent = true, desc = "Window split vertically" })
+
+set("n", "<C-Up>",    ":wincmd k<CR>", { silent = true, desc = "Mover para o painel de cima" })
+set("n", "<C-Down>",  ":wincmd j<CR>", { silent = true, desc = "Mover para o painel de baixo" })
+set("n", "<C-Left>",  ":wincmd h<CR>", { silent = true, desc = "Mover para o painel da esquerda" })
+set("n", "<C-Right>", ":wincmd l<CR>", { silent = true, desc = "Mover para o painel da direita" })
 
 -- vim.keymap.set("n", "Q", "<nop>") -- Desativa o keymap padrão da tecla Q
 

@@ -1,3 +1,12 @@
+--[ [ REPOSITORIES ] ]--
+
+-- https://github.com/echasnovski/mini.base16
+-- https://github.com/ribru17/bamboo.nvim
+-- https://github.com/rose-pine/neovim
+-- https://github.com/catppuccin/nvim
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     {
         'echasnovski/mini.base16',

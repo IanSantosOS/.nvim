@@ -1,3 +1,15 @@
+--[ [ REPOSITORIES ] ]--
+
+-- Telescope
+-- https://github.com/nvim-telescope/telescope.nvim
+-- https://github.com/nvim-telescope/telescope-ui-select.nvim
+-- https://github.com/nvim-telescope/telescope-fzf-native.nvim
+
+-- Plenary
+-- https://github.com/nvim-lua/plenary.nvim
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',

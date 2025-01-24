@@ -1,10 +1,15 @@
-local animation = {
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/eandrju/cellular-automaton.nvim
+
+--[ [ EXTRA CONFIGURATION ] ]--
+
+local slide_animation = {
     fps = 50,
     name = "slide",
 }
 
--- update function
-animation.update = function(grid)
+slide_animation.update = function(grid)
     for i = 1, #grid do
         local prev = grid[i][#grid[i]]
         for j = 1, #grid[i] do
@@ -14,9 +19,11 @@ animation.update = function(grid)
     return true
 end
 
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     "eandrju/cellular-automaton.nvim",
     config = function()
-        require("cellular-automaton").register_animation(animation)
+        require("cellular-automaton").register_animation(slide_animation)
     end,
 }

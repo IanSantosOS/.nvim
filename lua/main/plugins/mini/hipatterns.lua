@@ -1,4 +1,10 @@
--- Highlight color words
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/echasnovski/mini.hipatterns
+
+--[ [ EXTRA CONFIGURATION ] ]--
+
+-- Highlight words
 
 local words = {
     red = '#ff0000',
@@ -12,9 +18,11 @@ local word_color_group = function(_, match)
     return MiniHipatterns.compute_hex_color_group(hex, 'bg')
 end
 
--- Extra
+-- Mini Extra
 
 local hi_words = require('mini.extra').gen_highlighter.words
+
+--[ [ RETURN PLUGIN ] ]--
 
 return {
     "echasnovski/mini.hipatterns",
@@ -28,6 +36,7 @@ return {
                 -- Table with highlighters (see |MiniHipatterns.config| for more details).
                 -- Nothing is defined by default. Add manually for visible effect.
                 highlighters = {
+                    -- Highlight hex color string (`#rrggbb`)
                     hex_color = hipatterns.gen_highlighter.hex_color(),
                     word_color = {
                         { pattern = '%S+', group = word_color_group },

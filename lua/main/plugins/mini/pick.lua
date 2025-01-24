@@ -1,6 +1,13 @@
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/echasnovski/mini.pick
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     'echasnovski/mini.pick',
     version = false,
+    enabled = false,
     config = function()
         require('mini.pick').setup(
         {

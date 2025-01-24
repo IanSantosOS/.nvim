@@ -1,4 +1,12 @@
+--[ [ REPOSITORIES ] ]--
+
+-- https://github.com/nvim-lualine/lualine.nvim
+-- https://github.com/nvim-tree/nvim-web-devicons
+
+--[ [ EXTRA CONFIGURATION ] ]--
+
 -- Shock9616: Custom Lualine component to show attached language server
+-- https://github.com/Shock9616/nvim-config/blob/7893331b73086401d4282f50303473d0f07f14b9/lua/shock/plugins/lualine.lua
 local clients_lsp = function()
     local bufnr = vim.api.nvim_get_current_buf()
 
@@ -13,6 +21,8 @@ local clients_lsp = function()
     end
     return " " .. table.concat(c, " | ")
 end
+
+--[ [ RETURN PLUGIN ] ]--
 
 return {
     "nvim-lualine/lualine.nvim",

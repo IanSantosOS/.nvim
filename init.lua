@@ -1,6 +1,9 @@
--- Aqui eu coloco o nome dos diretórios dentro da pasta lua assim eu posso
--- testar outras configurações de outras pessoas de uma maneira mais prática
+-- Here I put the name of the directories inside the lua folder so that I can
+-- use and test my configurations and those of other people in a more practical way.
 
 require("main")
--- require("test")
 -- require("minimal")
+-- require("notepad")
+-- require("no-plugin")
+
+-- require("test")

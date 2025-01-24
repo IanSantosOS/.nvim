@@ -1,3 +1,19 @@
+--[ [ REPOSITORIES ] ]--
+
+-- CMP
+-- https://github.com/hrsh7th/nvim-cmp
+-- https://github.com/hrsh7th/cmp-nvim-lsp
+-- https://github.com/hrsh7th/cmp-buffer
+-- https://github.com/hrsh7th/cmp-path
+-- https://github.com/hrsh7th/cmp-cmdline
+
+-- Snippets
+-- https://github.com/L3MON4D3/LuaSnip
+-- https://github.com/saadparwaiz1/cmp_luasnip
+-- https://github.com/rafamadriz/friendly-snippets
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     "hrsh7th/nvim-cmp",
     lazy = false,

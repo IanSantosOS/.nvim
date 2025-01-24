@@ -1,3 +1,9 @@
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/echasnovski/mini.files
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     "echasnovski/mini.files",
     version = false,
@@ -24,7 +30,7 @@ return {
                 mark_goto = "'",
                 mark_set = "m",
                 reset = "<BS>",
-                reveal_cwd = "@",
+                reveal_cwd = ".",
                 show_help = "g?",
                 synchronize = "=",
                 trim_left = "<",
@@ -46,11 +52,11 @@ return {
                 -- Whether to show preview of file/directory under cursor
                 preview = false,
                 -- Width of focused window
-                width_focus = 50,
+                width_focus = 30,
                 -- Width of non-focused window
                 width_nofocus = 15,
                 -- Width of preview window
-                width_preview = 25,
+                width_preview = 50,
             },
         })
     end,

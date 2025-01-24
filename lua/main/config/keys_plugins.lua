@@ -1,11 +1,21 @@
 --[ [ KEYMAPS FOR PLUGINS ] ]--
 
-vim.g.mapleader = " "
 local set = vim.keymap.set
+
+--[ Auto Save ]--
+
+set('n', "<leader>as", ":ASToggle<CR>", { silent = true, desc = "Toggle auto-save" })
+
+--[ Stay Centered ]--
+
+set({ 'n', 'v' }, '<leader>tc', function()
+    require('stay-centered').toggle()
+    vim.notify("Toggled stay-centered", vim.log.levels.INFO, { title = "stay-centered" })
+end, { desc = 'Toggle stay-centered.nvim' })
 
 --[ UndoTree ]--
 
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 --[ Harpoon 2 ]--
 
@@ -53,7 +63,37 @@ set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
 
 --[ Mini.Files ]--
 
-set('n', '<leader>fe', ':lua MiniFiles.open()<CR>', { silent = true })
+-- set('n', '<leader>fe', ':lua MiniFiles.open()<CR>', { silent = true })
+
+-- https://github.com/linkarzu/dotfiles-latest/blob/7b2c7fcf88762d24b1ee816aa8ff8e115d32d57e/neovim/neobean/lua/plugins/mini-files.lua
+-- [[
+
+-- Open the directory of the file currently being edited
+-- If the file doesn't exist because you maybe switched to a new git branch
+-- open the current working directory
+set('n', '<leader>fe', function()
+    local buf_name = vim.api.nvim_buf_get_name(0)
+    local dir_name = vim.fn.fnamemodify(buf_name, ":p:h")
+    if vim.fn.filereadable(buf_name) == 1 then
+        require("mini.files").open(buf_name, true)
+    elseif vim.fn.isdirectory(dir_name) == 1 then
+        require("mini.files").open(dir_name, true)
+    else
+        require("mini.files").open(vim.uv.cwd(), true)
+    end
+end, {
+    -- silent = true,
+    desc = "Open mini.files (Directory of Current File or CWD if not exists)",
+})
+
+-- Open the current working directory
+set('n', '<leader>fE', function()
+    require("mini.files").open(vim.uv.cwd(), true)
+end, {
+    -- silent = true,
+    desc = "Open mini.files (cwd)",
+})
+-- ]]
 
 --[ Cellular Automaton ]--
 
@@ -62,26 +102,41 @@ set("n", "<leader>fm2", "<cmd>CellularAutomaton scramble<CR>", { desc = "Animaç
 set("n", "<leader>fm3", "<cmd>CellularAutomaton game_of_life<CR>", { desc = "Animação simulando o jogo da vida (muito doido)" })
 set("n", "<leader>fm4", "<cmd>CellularAutomaton slide<CR>", { desc = "Animação de slide da esquerda para a direita" })
 
+--[ Markdown Preview ]--
+
+set('n', '<leader>mp', ':MarkdownPreviewToggle<CR>', { desc = "Toggle markdown preview" })
+
 --[ Render Markdown ]--
 
-set('n', '<leader>mp', ':RenderMarkdown toggle<CR>', { desc = "Toggle markdown render" })
+set('n', '<leader>mr', ':RenderMarkdown toggle<CR>', { desc = "Toggle markdown render" })
 
 --[ Telescope ]--
 
-local builtin = require('telescope.builtin')
+local telescope = require('telescope.builtin')
 
 -- This keymap below was changed with the
 -- `main/telescope/multigrep.lua` file
 --
--- vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
+-- set('n', '<leader>fl', builtin.live_grep, {})
 require('main.telescope.multigrep').setup()
 
-set('n', '<leader>fp', builtin.find_files, {})
-set('n', '<leader>fg', builtin.git_files, {})
+set('n', '<leader>fp', telescope.find_files, {})
+set('n', '<leader>fg', telescope.git_files, {})
 
-set('n', '<leader>b',  builtin.buffers, {})
+set('n', '<leader>b',  telescope.buffers, {})
 
-set('n', '<leader>sc', builtin.colorscheme, {})
-set('n', '<leader>sf', builtin.current_buffer_fuzzy_find, {})
-set('n', '<leader>sk', builtin.keymaps, {})
-set('n', '<leader>sh', builtin.help_tags, {})
+set('n', '<leader>sc', telescope.colorscheme, {})
+set('n', '<leader>sf', telescope.current_buffer_fuzzy_find, {})
+set('n', '<leader>sk', telescope.keymaps, {})
+set('n', '<leader>sh', telescope.help_tags, {})
+
+-- --[ Mini.Pick ]--
+--
+-- set('n', '<leader>fp', ":Pick files<CR>", { silent = true })
+-- -- set('n', '<leader>fg', ":Pick files tool='git'<CR>", { silent = true })
+-- set('n', '<leader>fg', ":lua MiniExtra.pickers.git_files()", { silent = true })
+-- set('n', '<leader>fl', ":Pick grep_live<CR>", { silent = true })
+--
+-- set('n', '<leader>b', ":Pick buffers<CR>", { silent = true })
+--
+-- set('n', '<leader>sh', ":Pick help<CR>", { silent = true })

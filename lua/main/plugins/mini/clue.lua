@@ -1,3 +1,9 @@
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/echasnovski/mini.clue
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     "echasnovski/mini.clue",
     version = false,

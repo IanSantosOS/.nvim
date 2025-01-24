@@ -1,3 +1,9 @@
+--[ [ REPOSITORY ] ]--
+
+-- https://github.com/echasnovski/mini.icons
+
+--[ [ RETURN PLUGIN ] ]--
+
 return {
     'echasnovski/mini.icons',
     version = false,
