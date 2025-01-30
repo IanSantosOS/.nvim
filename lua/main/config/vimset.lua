@@ -1,6 +1,8 @@
 --[ [ VIMSET ] ]--
 
 --[ Desabling builtin plugins ]--
+
+-- https://neovim.discourse.group/t/how-to-disable-builtin-plugins/787/6
 local builtin_plugins = {
     'netrw',
     'netrwPlugin',
@@ -41,7 +43,8 @@ vim.opt.fileencoding = "utf-8"    -- Padrão UTF-8
 vim.opt.number = true             -- Ativa a coluna de números do lado esquerdo
 vim.opt.relativenumber = true     -- Ativa o relative number
 vim.opt.signcolumn = "yes"        -- Sempre exibir um espaço do lado esquerdo da coluna de números para marcadores visuais
-vim.opt.colorcolumn = '80'        -- Uma coluna visual para delimitar a quantidade de caracteres
+-- vim.opt.colorcolumn = '80'     -- Uma coluna visual para delimitar a quantidade de caracteres
+                                  -- I prefer activating it with a keybinding instead
 
 vim.opt.wrap = false              -- Desativa a quebra de linha automática
 vim.opt.scrolloff = 8             -- Distância para ativar a rolagem vertical do texto
@@ -100,6 +103,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
+
 
 -- Numbers on the side of the nvim builtin terminal are weird
 vim.api.nvim_create_autocmd("TermOpen", {

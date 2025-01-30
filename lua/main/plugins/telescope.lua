@@ -8,7 +8,7 @@
 -- Plenary
 -- https://github.com/nvim-lua/plenary.nvim
 
---[ [ RETURN PLUGIN ] ]--
+--[ [ RETURN PLUGINS ] ]--
 
 return {
     'nvim-telescope/telescope.nvim',

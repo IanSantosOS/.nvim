@@ -7,7 +7,7 @@
 -- https://github.com/williamboman/mason.nvim
 -- https://github.com/williamboman/mason-lspconfig.nvim
 
---[ [ RETURN PLUGIN ] ]--
+--[ [ RETURN PLUGINS ] ]--
 
 return {
     "neovim/nvim-lspconfig",

@@ -1,8 +1,9 @@
---[ [ REPOSITORY ] ]--
+--[ [ REPOSITORIES ] ]--
 
 -- https://github.com/theprimeagen/harpoon
+-- https://github.com/nvim-lua/plenary.nvim
 
---[ [ RETURN PLUGIN ] ]--
+--[ [ RETURN PLUGINS ] ]--
 
 return {
     "theprimeagen/harpoon",

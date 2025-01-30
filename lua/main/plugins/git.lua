@@ -3,7 +3,7 @@
 -- https://github.com/tpope/vim-fugitive
 -- https://github.com/lewis6991/gitsigns.nvim
 
---[ [ RETURN PLUGIN ] ]--
+--[ [ RETURN PLUGINS ] ]--
 
 return {
     "tpope/vim-fugitive",

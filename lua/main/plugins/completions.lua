@@ -12,7 +12,7 @@
 -- https://github.com/saadparwaiz1/cmp_luasnip
 -- https://github.com/rafamadriz/friendly-snippets
 
---[ [ RETURN PLUGIN ] ]--
+--[ [ RETURN PLUGINS ] ]--
 
 return {
     "hrsh7th/nvim-cmp",
@@ -53,6 +53,7 @@ return {
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
+                { name = "render-markdown" },
             }, {
                 { name = "buffer" },
             }),

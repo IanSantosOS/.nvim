@@ -5,7 +5,7 @@
 -- https://github.com/theprimeagen/vim-be-good
 -- https://github.com/nvim-lua/plenary.nvim
 
---[ [ RETURN PLUGIN ] ]--
+--[ [ RETURN PLUGINS ] ]--
 
 return {
     "mbbill/undotree",

@@ -1,4 +1,4 @@
---[ [ REPOSITORY ] ]--
+--[ [ REPOSITORIES ] ]--
 
 -- noice.nvim
 -- https://github.com/folke/noice.nvim
@@ -6,14 +6,12 @@
 -- nui.nvim
 -- https://github.com/MunifTanjim/nui.nvim
 
---[ [ RETURN PLUGIN ] ]--
+--[ [ RETURN PLUGINS ] ]--
 
 return {
     "folke/noice.nvim",
     event = "VeryLazy",
-    dependencies = {
-        "MunifTanjim/nui.nvim",
-    },
+    dependencies = { "MunifTanjim/nui.nvim" },
     opts = {
         lsp = {
             override = {

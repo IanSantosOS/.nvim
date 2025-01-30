@@ -1,18 +1,17 @@
---[ [ REPOSITORIES ] ]--
+--[ [ OBSERVATION ] ]
 
--- https://github.com/echasnovski/mini.pairs
+-- This directory is filled with just mini.nvim plugins, although I am utilising
+-- standalone plugins of this package it is highly recommended to utilize the
+-- complete library:
+-- https://github.com/echasnovski/mini.nvim
+
+--[ [ REPOSITORY ] ]--
+
 -- https://github.com/echasnovski/mini.extra
 
 --[ [ RETURN PLUGIN ] ]--
 
 return {
-    {
-        'echasnovski/mini.pairs',
-        version = false,
-        config = function()
-            require('mini.pairs').setup()
-        end
-    },
     {
         'echasnovski/mini.extra',
         version = false,

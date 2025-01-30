@@ -1,6 +1,6 @@
 --[ [ REPOSITORY ] ]--
 
--- https://github.com/okuuva/auto-save.nvim/
+-- https://github.com/okuuva/auto-save.nvim
 
 -- This is a fork of the original repository:
 -- https://github.com/Pocco81/auto-save.nvim

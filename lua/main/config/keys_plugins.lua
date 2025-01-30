@@ -2,6 +2,24 @@
 
 local set = vim.keymap.set
 
+--[ Hardtime ]--
+
+set("n", "<leader>ht", "<CMD>Hardtime toggle<CR>", { desc = "Toggle Hardtime" })
+
+--[ Obsidian ]--
+
+-- set("v", "<CR>", function()
+--     local start_line, end_line = vim.fn.line("'<"), vim.fn.line("'>")
+--
+--     for line = start_line, end_line do
+--         vim.cmd(line .. 'lua require("obsidian").util.toggle_checkbox()')
+--     end
+-- end, { silent = true })
+
+set("n", "<leader>mf", "<CMD>ObsidianQuickSwitch<CR>", { desc = "Quickly access my notes" })
+
+set("n", "<leader>mt", "<CMD>ObsidianTags<CR>", { desc = "Search notes by tags" })
+
 --[ Auto Save ]--
 
 set('n', "<leader>as", ":ASToggle<CR>", { silent = true, desc = "Toggle auto-save" })
@@ -125,10 +143,10 @@ set('n', '<leader>fg', telescope.git_files, {})
 
 set('n', '<leader>b',  telescope.buffers, {})
 
-set('n', '<leader>sc', telescope.colorscheme, {})
-set('n', '<leader>sf', telescope.current_buffer_fuzzy_find, {})
-set('n', '<leader>sk', telescope.keymaps, {})
-set('n', '<leader>sh', telescope.help_tags, {})
+set('n', '<leader>pc', telescope.colorscheme, {})
+set('n', '<leader>pf', telescope.current_buffer_fuzzy_find, {})
+set('n', '<leader>pk', telescope.keymaps, {})
+set('n', '<leader>ph', telescope.help_tags, {})
 
 -- --[ Mini.Pick ]--
 --
@@ -139,4 +157,4 @@ set('n', '<leader>sh', telescope.help_tags, {})
 --
 -- set('n', '<leader>b', ":Pick buffers<CR>", { silent = true })
 --
--- set('n', '<leader>sh', ":Pick help<CR>", { silent = true })
+-- set('n', '<leader>ph', ":Pick help<CR>", { silent = true })

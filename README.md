@@ -23,7 +23,6 @@ Repositório Neovim -> <https://github.com/neovim/neovim>
 - plugins do [Tpope](https://github.com/tpope)
 - neotest -> testes dentro do neovim
 - folke/trouble.nvim -> ferramenta para erros no código
-- folke/zen-mode.nvim -> codar no nvim sem distração
 - m4xshen/hardtime.nvim -> desabilita certas funções para tirar seus mals habitos no neovim
 - tris203/precognition.nvim -> mostra dicas de navegação
 - inc-rename.nvim
@@ -52,8 +51,7 @@ git clone https://github.com/IanSantosOS/.nvim.git $HOME/.config/nvim
 
 ### Websites
 
-- [How to disable builtin plugins](https://neovim.discourse.group/t/how-to-disable-builtin-plugins/787/6)
-- [Split windows in neovim](https://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/)
+- [Dotfyle](https://dotfyle.com/)
 
 ### Repositórios
 

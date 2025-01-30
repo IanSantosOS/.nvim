@@ -22,7 +22,7 @@ local clients_lsp = function()
     return " " .. table.concat(c, " | ")
 end
 
---[ [ RETURN PLUGIN ] ]--
+--[ [ RETURN PLUGINS ] ]--
 
 return {
     "nvim-lualine/lualine.nvim",
