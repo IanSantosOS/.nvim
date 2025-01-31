@@ -1,6 +1,6 @@
 --[ [ REPOSITORIES ] ]--
 
--- https://github.comjsmjonas/inc-rename.nvim
+-- https://github.com/smjonas/inc-rename.nvim
 
 --[ [ RETURN PLUGINS ] ]--
 
