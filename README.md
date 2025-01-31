@@ -6,15 +6,30 @@ Repositório Neovim -> <https://github.com/neovim/neovim>
 
 - mudar a minha configuração inteira para inglês
 - adicionar um comentário em cada um dos keymaps criados, todo comentário deve
-  começar com \[P\] para eu saber que o comentário foi feito por mim e não pelo
-  neovim ou por algum plugin
+  começar com \[P\] para eu saber que o comentário foi feito por mim e não
+  pelo neovim ou por algum plugin
 - atualizar a lista de plugins
 - verificar as boas práticas de plugin na [documentação developer](https://lazy.folke.io/developers)
+- adicionar o `vim.notify()` nos keymaps que necessitam (principalmente os de
+  toggle)
 
 - fazer 4 tipos de configs:
   - minimal -> Apenas as configurações e plugins que julgo necessários
   - notepad -> Configurações para utilizar nvim como o meu notepad
   - no-plugin -> Mesma configuração do meu VIM porém em lua
+
+- adicionar melhores keymaps e configurações para os plugins:
+    - bullets
+    - hardtime
+    - obsidian
+    - vim-pencil
+    - vim-table-mode
+    - inc-rename
+    - precognition
+
+- arrumar os cabeçalhos de plugins para ficar o mesmo tipo em todos eles (veja
+  os plugins de lsp, vim-be-good e telescope)
+- adicionar uma descrição para cada plugin (veja o exemplo do vim-be-good)
 
 ## Pacotes
 
@@ -23,15 +38,12 @@ Repositório Neovim -> <https://github.com/neovim/neovim>
 - plugins do [Tpope](https://github.com/tpope)
 - neotest -> testes dentro do neovim
 - folke/trouble.nvim -> ferramenta para erros no código
-- m4xshen/hardtime.nvim -> desabilita certas funções para tirar seus mals habitos no neovim
-- tris203/precognition.nvim -> mostra dicas de navegação
-- inc-rename.nvim
 - refactoring.nvim
-- vim-surround
-- nvim-notify
 - nvim-autopairs
 - MeanderingProgrammer/harpoon-core.nvim
-- folke/noice.nvim
+- hedyhli/outline.nvim
+- HakonHarnes/img-clip.nvim
+- 3rd/image.nvim
 
 ## Setup
 

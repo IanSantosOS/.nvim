@@ -2,19 +2,23 @@
 
 local set = vim.keymap.set
 
+--[ Precognition ]--
+
+set("n", "<leader>pt", "<CMD>Precognition toggle<CR>", { desc = "Toggle precognition.nvim" })
+
+--[ Inc Rename ]--
+
+set("n", "<leader>rn", ":IncRename ")
+
+set("n", "<leader>rf", function()
+    return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })
+
 --[ Hardtime ]--
 
 set("n", "<leader>ht", "<CMD>Hardtime toggle<CR>", { desc = "Toggle Hardtime" })
 
 --[ Obsidian ]--
-
--- set("v", "<CR>", function()
---     local start_line, end_line = vim.fn.line("'<"), vim.fn.line("'>")
---
---     for line = start_line, end_line do
---         vim.cmd(line .. 'lua require("obsidian").util.toggle_checkbox()')
---     end
--- end, { silent = true })
 
 set("n", "<leader>mf", "<CMD>ObsidianQuickSwitch<CR>", { desc = "Quickly access my notes" })
 

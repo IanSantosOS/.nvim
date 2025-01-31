@@ -1,17 +1,33 @@
+-- This file contain my templates for plugin's header
+
+---- Single Plugin -------------------------------------------------------------
+
+--[ [ REPOSITORY ] ]--
+
+-- 
+-- https://github.com/
+
+--[ [ EXTRA CONFIGURATION ] ]--
+
+-- 
+
+--[ [ RETURN PLUGIN ] ]--
+
+
+---- Multiple Plugin -----------------------------------------------------------
+
 --[ [ REPOSITORIES ] ]--
 
--- https://github.com/mbbill/undotree
--- https://github.com/christoomey/vim-tmux-navigator
--- https://github.com/theprimeagen/vim-be-good
--- https://github.com/nvim-lua/plenary.nvim
+-- 
+-- https://github.com/
+
+-- 
+-- https://github.com/
+
+--[ [ EXTRA CONFIGURATION ] ]--
+
+-- 
 
 --[ [ RETURN PLUGINS ] ]--
 
-return {
-    "mbbill/undotree",
-    "christoomey/vim-tmux-navigator",
-    {
-        "theprimeagen/vim-be-good",
-        dependencies = { "nvim-lua/plenary.nvim" },
-    },
-}
+return {}

@@ -40,18 +40,18 @@ return {
                 path = "~/Documents/notes/school",
             },
         },
-        -- daily_notes = {
-        --     -- Optional, if you keep daily notes in a separate directory.
-        --     folder = "notes/dailies",
-        --     -- Optional, if you want to change the date format for the ID of daily notes.
-        --     date_format = "%Y-%m-%d",
-        --     -- Optional, if you want to change the date format of the default alias of daily notes.
-        --     alias_format = "%B %-d, %Y",
-        --     -- Optional, default tags to add to each new daily note created.
-        --     default_tags = { "daily-notes" },
-        --     -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-        --     template = nil,
-        -- },
+        daily_notes = {
+            -- Optional, if you keep daily notes in a separate directory.
+            folder = "[04] Daily Notes",
+            -- Optional, if you want to change the date format for the ID of daily notes.
+            date_format = "%Y-%m-%d",
+            -- Optional, if you want to change the date format of the default alias of daily notes.
+            alias_format = "%B %-d, %Y",
+            -- Optional, default tags to add to each new daily note created.
+            default_tags = { "daily-notes" },
+            -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+            template = "daily-notes.md",
+        },
 
         -- -- Optional, if you keep notes in a specific subdirectory of your vault.
         -- notes_subdir = "notes",
@@ -67,7 +67,7 @@ return {
         -- Optional, for templates (see below).
         templates = {
             folder = "[99] Templates",
-            -- date_format = "%Y-%m-%d",
+            date_format = "%d-%m-%Y",
             -- time_format = "%H:%M",
             -- -- A map for custom variables, the key should be the variable and the value a function
             -- substitutions = {},
@@ -121,7 +121,7 @@ return {
                 opts = { noremap = false, expr = true, buffer = true },
             },
             -- Toggle check-boxes.
-            ["<leader>mc"] = {
+            ["<leader>mx"] = {
                 action = function()
                     return require("obsidian").util.toggle_checkbox({ " ", "x", "-", "!" })
                 end,
@@ -153,10 +153,10 @@ return {
                     suffix = suffix .. string.char(math.random(65, 90))
                 end
             end
-            return tostring(os.time()) .. "-" .. suffix
+            return tostring(os.date("%Y%m%d%H%M")) .. "-" .. suffix
         end,
 
-        -- Optional, customize how note file names are generated given the ID, target directory, and title.
+        -- -- Optional, customize how note file names are generated given the ID, target directory, and title.
         -- note_path_func = function(spec)
         --     -- This is equivalent to the default behavior.
         --     local path = spec.dir / tostring(spec.id)
