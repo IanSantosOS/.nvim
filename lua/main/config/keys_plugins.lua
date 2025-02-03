@@ -2,10 +2,6 @@
 
 local set = vim.keymap.set
 
---[ Precognition ]--
-
-set("n", "<leader>pt", "<CMD>Precognition toggle<CR>", { desc = "Toggle precognition.nvim" })
-
 --[ Inc Rename ]--
 
 set("n", "<leader>rn", ":IncRename ")

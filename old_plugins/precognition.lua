@@ -1,3 +1,9 @@
+--[ [ KEYMAP ] ]--
+
+--[ Precognition ]--
+
+-- vim.keymap.set("n", "<leader>pt", "<CMD>Precognition toggle<CR>", { desc = "Toggle precognition.nvim" })
+
 --[ [ REPOSITORIES ] ]--
 
 -- https://github.com/tris203/precognition.nvim
