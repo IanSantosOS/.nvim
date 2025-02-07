@@ -123,6 +123,7 @@ vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Mover para o painel da d
 vim.keymap.set("x",          "<leader>p",  [["_dP]], { desc = "Substitui o que está selecionado pelo que está no clipboard" })
 vim.keymap.set("n",          "<leader>Y",  [["+Y]],  { desc = "Copia do cursor atual até o final da linha para o clipboard do sistema."})
 vim.keymap.set({ "n", "v" }, "<leader>y",  [["+y]],  { desc = "Copia para o clipboard do sistema" })
+vim.keymap.set({ "n", "v" }, "<leader>P",  [["+p]],  { desc = "Cola o que está no clipboard do sistema" })
 vim.keymap.set({ "n", "v" }, "<leader>dd", [["_d]],  { desc = "Deleta sem ir para o cliboard" })
 
 function ToggleColorColumn()

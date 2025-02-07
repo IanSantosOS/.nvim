@@ -79,6 +79,7 @@ set({ "n", "v" }, "<C-Right>", "<CMD>wincmd l<CR>", { silent = true, desc = "Mov
 set("x",          "<leader>p",  [["_dP]], { desc = "Substitui o que está selecionado pelo que está no clipboard" })
 set("n",          "<leader>Y",  [["+Y]],  { desc = "Copia do cursor atual até o final da linha para o clipboard do sistema."})
 set({ "n", "v" }, "<leader>y",  [["+y]],  { desc = "Copia para o clipboard do sistema" })
+set({ "n", "v" }, "<leader>P",  [["+p]],  { desc = "Cola o que está no clipboard do sistema" })
 set({ "n", "v" }, "<leader>dd", [["_d]],  { desc = "Deleta sem ir para o cliboard" })
 
 set("n", "<leader>k", "<CMD>cnext<CR>zz") -- TESTE COM <cmd>
