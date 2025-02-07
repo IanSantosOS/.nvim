@@ -51,7 +51,7 @@ vim.opt.scrolloff = 8             -- Distância para ativar a rolagem vertical d
 vim.opt.sidescrolloff = 8         -- Distância para ativar a rolagem horizontal do texto
 
 vim.opt.tabstop = 4               -- Define que 1 Tab = 4 Espaços
-vim.opt.softtabstop = 0           -- Os espaços inseridos quando aperta Tab ou BackSpace será o mesmo do tabstop
+vim.opt.softtabstop = 4           -- Os espaços inseridos quando aperta Tab ou BackSpace será o mesmo do tabstop
 vim.opt.shiftwidth = 4            -- Espaços inseridos ao utilizar a tecla de recuo
 vim.opt.expandtab = true          -- Transforma Tab em Espaços
 
@@ -80,7 +80,7 @@ vim.opt.undofile = true           -- Habilita a gravação de histórico de edi�
 if vim.fn.has("win32") == 1 then
     vim.opt.undodir = vim.fn.expand("$HOME") .. "/AppData/Local/nvim-data/undodir"
 else
-    vim.opt.undodir = vim.fn.expand("$HOME") .. "/.vim/undodir"
+    vim.opt.undodir = vim.fn.expand("$HOME") .. "/.config/nvim/undodir" -- probably I will change this location in the future
 end
 
 
