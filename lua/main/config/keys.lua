@@ -1,98 +1,141 @@
 --[ [ KEYMAPS ] ]--
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 local set = vim.keymap.set
 
-set("n", "<leader><leader>L", "<CMD>source %<CR>")
-set("n", "<leader><leader>l", "<CMD>.lua<CR>")
-set("v", "<leader><leader>l", ":lua<CR>", { silent = true })
+-- vim.keymap.set("n", "Q", "<nop>")
 
-set("n", "<leader>fe", "<CMD>Lex!<CR>", { desc = "Abre o Netrw tree" })
+--[ Config Related ]--
 
-set("n", "<leader>fp", ":find ", { desc = "Go to file" });
-set("n", "<leader>b",  ":b ",    { desc = "Go to file" });
+set("n", "<leader><leader>L", "<CMD>source %<CR>",       { desc = "[N] Execute the entire file (vim or lua)" })
+set("n", "<leader><leader>l", "<CMD>.lua<CR>",           { desc = "[N] Execute the current line in lua"      })
+set("v", "<leader><leader>l", ":lua<CR>", { silent = true, desc = "[N] Execute the selected code in lua"     })
 
-set("n", "<leader>ff", vim.lsp.buf.format, { desc = "Formata o buffer atual" })
-set("n", "<leader>dh", vim.lsp.buf.hover, {})
-set("n", "<leader>df", vim.lsp.buf.definition, {})
-set("n", "<leader>dr", vim.lsp.buf.references, {})
-set("n", "<leader>ca", vim.lsp.buf.code_action, {})
--- Talvez o lugar desse daqui seja no `keys_plugins.lua`
-set("n", "<leader>lsp", "<CMD>LspRestart<CR>", { desc = "Reinicia o LSP" })
+--[ Quit ]--
 
-set({ "n", "v" }, "<leader>/", "<CMD>let @/=''<CR>", { silent = true, desc = "Remove os resultados da busca com o /" })
+set({ "n", "v" }, "<leader>qq", "<CMD>q<CR>",  { desc = "[N] Quit"          })
+set({ "n", "v" }, "<leader>wq", "<CMD>wq<CR>", { desc = "[N] Write and Quit"})
 
-set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-set("n", "<leader>sS", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left><Left>]])
+--[ Leaves Insert Mode ]--
 
-set({ "n", "v", "i" }, "<C-s>", "<CMD>update<CR>", { desc = "Salva o arquivo utilizando :update" })
-set("i", "jk", "<ESC>");
-set("i", "kj", "<ESC>");
+set("i", "jk", "<ESC>", { desc = "[N] Leaves insert mode" })
+set("i", "kj", "<ESC>", { desc = "[N] Leaves insert mode" })
 
--- For now I prefer to utilize tmux to handle this
--- maybe in the future I go back to this
--- set("n", "<leader>tt", ":lua OpenTerminal()<CR>", { desc = "Open terminal" })
+--[ Quickfix ]--
 
-set("n", "J", "mzJ`z", { desc = "Junta a linha atual com a linha de baixo mantendo o cursor na posição original" })
+set("n", "<leader>j", "<CMD>cnext<CR>", { desc = "[N] Jump to the next item in the Quickfix List" })
+set("n", "<leader>k", "<CMD>cprev<CR>", { desc = "[N] Jump to the previous item in the Quickfix List" })
 
-set({ "n", "v" }, "<leader>t8", ":lua ToggleColorColumn()<CR>", { silent = true, desc = "Ativa/Desativa a coluna de 80 caracteres" })
+--[ File ]--
 
-set("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Mover a seleção atual para baixo" })
-set("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Mover a seleção atual para cima" })
+set("n", "<leader>fe", "<CMD>Lex!<CR>", { desc = "[N] Open the Netrw tree" })
+set("n", "<leader>fp", ":find ",        { desc = "[N] Search file"         })
 
-set({ "n", "v" }, "<C-u>", "<C-u>zz", { desc = "Centraliza o cursor enquanto move a tela para cima" })
-set({ "n", "v" }, "<C-d>", "<C-d>zz", { desc = "Centraliza o cursor enquanto move a tela para baixo" })
--- set({ "n", "v" }, "j", "jzz", {})
--- set({ "n", "v" }, "k", "kzz", {})
+--[ Navigation ]--
 
-set("n", "n", "nzzzv", { desc = "Salta para a ocorrência posterior da busca (com o cursor centralizado)" })
-set("n", "N", "Nzzzv", { desc = "Salta para a ocorrência anterior da busca (com o cursor centralizado)" })
+set("n", "J", "mzJ`z", { desc = "[N] Join lines while keeping the cursor position centered" })
 
---[ WINDOWS ]--
+set("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "[N] Move the current selection to the line below" })
+set("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "[N] Move the current selection to the line above" })
 
-set({ "n", "v" }, "<leader>w",  "<C-w>",       { silent = true, desc = "Window prefix command" })
-set({ "n", "v" }, "<leader>wh", "<CMD>vsplit<CR>", { silent = true, desc = "Window split horizontally" })
-set({ "n", "v" }, "<leader>wv", "<CMD>split<CR>",  { silent = true, desc = "Window split vertically" })
+set({ "n", "v" }, "<C-u>", "<C-u>zz", { desc = "[N] Scroll up half a screen while keeping the cursor centered" })
+set({ "n", "v" }, "<C-d>", "<C-d>zz", { desc = "[N] Scroll down half a screen while keeping the cursor centered" })
+-- set({ "n", "v" }, "k",     "kzz",     { desc = "[N] Scroll up while keeping the cursor centered" })
+-- set({ "n", "v" }, "j",     "jzz",     { desc = "[N] Scroll down while keeping the cursor centered" })
 
-set({ "n", "v" }, "<C-M-k>", "<CMD>resize +5<CR>",           { silent = true })
-set({ "n", "v" }, "<C-M-j>", "<CMD>resize -5<CR>",           { silent = true })
-set({ "n", "v" }, "<C-M-h>", "<CMD>vertical resize -10<CR>", { silent = true })
-set({ "n", "v" }, "<C-M-l>", "<CMD>vertical resize +10<CR>", { silent = true })
+set({ "n", "v" }, "n",     "nzzzv",   { desc = "[N] Go to the next search result while keeping the cursor centered and unfolding if needed" })
+set({ "n", "v" }, "N",     "Nzzzv",   { desc = "[N] Go to the previous search result while keeping the cursor centered and unfolding if needed" })
 
-set({ "n", "v" }, "<C-M-Up>",    "<CMD>resize +5<CR>",           { silent = true })
-set({ "n", "v" }, "<C-M-Down>",  "<CMD>resize -5<CR>",           { silent = true })
-set({ "n", "v" }, "<C-M-Left>",  "<CMD>vertical resize -10<CR>", { silent = true })
-set({ "n", "v" }, "<C-M-Right>", "<CMD>vertical resize +10<CR>", { silent = true })
+--[ Buffer ]--
 
-set({ "n", "v" }, "<C-k>", "<CMD>wincmd k<CR>", { silent = true, desc = "Mover para o painel de cima" })
-set({ "n", "v" }, "<C-j>", "<CMD>wincmd j<CR>", { silent = true, desc = "Mover para o painel de baixo" })
-set({ "n", "v" }, "<C-h>", "<CMD>wincmd h<CR>", { silent = true, desc = "Mover para o painel da esquerda" })
-set({ "n", "v" }, "<C-l>", "<CMD>wincmd l<CR>", { silent = true, desc = "Mover para o painel da direita" })
+set("n",               "<leader>bb", ":buffer ",           { desc = "[N] Search buffer" })
+set("n",               "<leader>bd", "<CMD>bdelete<CR>",   { desc = "[N] Deletes current buffer"  })
+set({ "n", "v", "i" }, "<C-s>",      "<CMD>update<CR>",    { desc = "[N] Saves the current buffer" })
 
-set({ "n", "v" }, "<C-Up>",    "<CMD>wincmd k<CR>", { silent = true, desc = "Mover para o painel de cima" })
-set({ "n", "v" }, "<C-Down>",  "<CMD>wincmd j<CR>", { silent = true, desc = "Mover para o painel de baixo" })
-set({ "n", "v" }, "<C-Left>",  "<CMD>wincmd h<CR>", { silent = true, desc = "Mover para o painel da esquerda" })
-set({ "n", "v" }, "<C-Right>", "<CMD>wincmd l<CR>", { silent = true, desc = "Mover para o painel da direita" })
+--[ Tab ]--
 
--- vim.keymap.set("n", "Q", "<nop>") -- Desativa o keymap padrão da tecla Q
+set("n", "<leader>tn", "<CMD>tabnew<CR>",      { desc = "[N] Creates new tab"       })
+set("n", "<leader>tx", "<CMD>tabclose<CR>",    { desc = "[N] Closes current tab"    })
+set("n", "<leader>pt", "<CMD>tabprevious<CR>", { desc = "[N] Moves to next tab"     })
+set("n", "<leader>nt", "<CMD>tabnext<CR>",     { desc = "[N] Moves to previous tab" })
 
-set("x",          "<leader>p",  [["_dP]], { desc = "Substitui o que está selecionado pelo que está no clipboard" })
-set("n",          "<leader>Y",  [["+Y]],  { desc = "Copia do cursor atual até o final da linha para o clipboard do sistema."})
-set({ "n", "v" }, "<leader>y",  [["+y]],  { desc = "Copia para o clipboard do sistema" })
-set({ "n", "v" }, "<leader>P",  [["+p]],  { desc = "Cola o que está no clipboard do sistema" })
-set({ "n", "v" }, "<leader>dd", [["_d]],  { desc = "Deleta sem ir para o cliboard" })
+--[ LSP ]--
 
-set("n", "<leader>k", "<CMD>cnext<CR>zz") -- TESTE COM <cmd>
-set("n", "<leader>j", "<CMD>cprev<CR>zz")
+-- Maybe this should be in the `keys_plugins.lua` file.
+set("n", "<leader>lsp", "<CMD>LspRestart<CR>", { desc = "[N] Restart the LSP server" })
+
+set("n", "<leader>ff", vim.lsp.buf.format,      { desc = "[N] Format the current buffer using LSP"                           })
+set("n", "<leader>dh", vim.lsp.buf.hover,       { desc = "[N] Show hover information for the symbol under the cursor"        })
+set("n", "<leader>df", vim.lsp.buf.definition,  { desc = "[N] Go to the definition of the symbol under the cursor"           })
+set("n", "<leader>dr", vim.lsp.buf.references,  { desc = "[N] Show all references to the symbol under the cursor"            })
+set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[N] Show available code actions for the current line or selection" })
+
+--[ Clipboard ]--
+
+set("x",          "<leader>p",  [["_dP]], { desc = "[N] Paste over selected text without replacing the default register (avoids overwriting copied text)" })
+set("n",          "<leader>Y",  [["+Y]],  { desc = "[N] Yank the current line into the system clipboard" })
+set({ "n", "v" }, "<leader>y",  [["+y]],  { desc = "[N] Yank selected text into the system clipboard" })
+set({ "n", "v" }, "<leader>P",  [["+p]],  { desc = "[N] Paste from the system clipboard" })
+set({ "n", "v" }, "<leader>dd", [["_d]],  { desc = "[N] Delete without copying into any register (avoids overwriting the clipboard)" })
+
+--[ Search and Replace ]--
+
+set(
+    "n",
+    "<leader>ss",
+    [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "[N] Search and replace the word under the cursor globally (Case Insensitive)" }
+)
+set(
+    "n",
+    "<leader>sS",
+    [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left><Left>]],
+    { desc = "[N] Search and replace the word under the cursor globally (Case Sensitive)" }
+)
+
+--[ Window/Panel ]--
+
+set({ "n", "v" }, "<leader>w", "<C-w>", { silent = true, desc = "[N] Window prefix command" })
+set({ "n", "v" }, "<leader>wh", "<CMD>vsplit<CR>", { silent = true, desc = "[N] Window split horizontally" })
+set({ "n", "v" }, "<leader>wv", "<CMD>split<CR>",  { silent = true, desc = "[N] Window split vertically" })
+
+set({ "n", "v" }, "<C-M-k>", "<CMD>resize +5<CR>", { silent = true, desc = "[N] Resize top/bottom +5" })
+set({ "n", "v" }, "<C-M-j>", "<CMD>resize -5<CR>", { silent = true, desc = "[N] Resize top/bottom -5" })
+set({ "n", "v" }, "<C-M-h>", "<CMD>vertical resize -10<CR>", { silent = true, desc = "[N] Resize left/right -10" })
+set({ "n", "v" }, "<C-M-l>", "<CMD>vertical resize +10<CR>", { silent = true, desc = "[N] Resize left/right +10" })
+
+set({ "n", "v" }, "<C-M-Up>",    "<CMD>resize +5<CR>", { silent = true, desc = "[N] Resize top/bottom +5" })
+set({ "n", "v" }, "<C-M-Down>",  "<CMD>resize -5<CR>", { silent = true, desc = "[N] Resize top/bottom -5" })
+set({ "n", "v" }, "<C-M-Left>",  "<CMD>vertical resize -10<CR>", { silent = true, desc = "[N] Resize left/right -10" })
+set({ "n", "v" }, "<C-M-Right>", "<CMD>vertical resize +10<CR>", { silent = true, desc = "[N] Resize left/right +10" })
+
+set({ "n", "v" }, "<C-k>", "<CMD>wincmd k<CR>", { silent = true, desc = "[N] Move to the top panel"    })
+set({ "n", "v" }, "<C-j>", "<CMD>wincmd j<CR>", { silent = true, desc = "[N] Move to the bottom panel" })
+set({ "n", "v" }, "<C-h>", "<CMD>wincmd h<CR>", { silent = true, desc = "[N] Move to the left panel"   })
+set({ "n", "v" }, "<C-l>", "<CMD>wincmd l<CR>", { silent = true, desc = "[N] Move to the right panel"  })
+
+set({ "n", "v" }, "<C-Up>", "<CMD>wincmd k<CR>",    { silent = true, desc = "[N] Move to the top panel"    })
+set({ "n", "v" }, "<C-Down>", "<CMD>wincmd j<CR>",  { silent = true, desc = "[N] Move to the bottom panel" })
+set({ "n", "v" }, "<C-Left>", "<CMD>wincmd h<CR>",  { silent = true, desc = "[N] Move to the left panel"   })
+set({ "n", "v" }, "<C-Right>", "<CMD>wincmd l<CR>", { silent = true, desc = "[N] Move to the right panel"  })
+
+--[ Auto Close ]--
 
 set("i", "/*", "/**/<Left><Left>") -- auto closes /**/
-set("i", "\"", "\"\"<Left>") -- auto closes ""
-set("i", "'", "''<Left>")    -- auto closes ''
--- set("i", "`", "``<Left>") -- auto closes ``
-set("i", "(", "()<Left>") -- auto closes ()
-set("i", "[", "[]<Left>") -- auto closes []
-set("i", "{", "{}<Left>") -- auto closes {}
-set("i", "<", "<><Left>") -- auto closes <>
+set("i", '"', '""<Left>')          -- auto closes ""
+set("i", "'", "''<Left>")          -- auto closes ''
+-- set("i", "`", "``<Left>")          -- auto closes ``
+set("i", "(", "()<Left>")          -- auto closes ()
+set("i", "[", "[]<Left>")          -- auto closes []
+set("i", "{", "{}<Left>")          -- auto closes {}
+set("i", "<", "<><Left>")          -- auto closes <>
+
+--[ Others ]--
+
+set({ "n", "v" }, "<leader>/", "<CMD>let @/=''<CR>", { silent = true, desc = "[N] Clears the search highlight" })
+
+set({ "n", "v" }, "<leader>t8", "<CMD>lua ToggleColorColumn()<CR>", { desc = "[N] Toggle 80 characters color column" })
 
 --[ Functions ]--
 
@@ -105,9 +148,13 @@ function ToggleColorColumn()
 end
 
 
-function OpenTerminal()
-    vim.cmd.new()
-    vim.cmd.term()
-    vim.cmd.wincmd("J")
-    vim.api.nvim_win_set_height(0, 15)
-end
+-- For now I prefer to utilize tmux to handle this
+-- maybe in the future I go back to this
+-- set("n", "<leader>tt", "<CMD>lua OpenTerminal()<CR>", { desc = "Open terminal" })
+
+-- function OpenTerminal()
+--     vim.cmd.new()
+--     vim.cmd.term()
+--     vim.cmd.wincmd("J")
+--     vim.api.nvim_win_set_height(0, 15)
+-- end

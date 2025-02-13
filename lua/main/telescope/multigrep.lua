@@ -52,7 +52,7 @@ local live_multigrep = function(opts)
 end
 
 M.setup = function()
-    vim.keymap.set("n", "<leader>fl", live_multigrep)
+    vim.keymap.set("n", "<leader>fl", live_multigrep, { desc = "[P] Telescope Multigrep" })
 end
 
 return M
