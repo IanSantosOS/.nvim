@@ -2,6 +2,32 @@
 
 This is where my main Neovim config lives.
 
+## Things I have to do
+
+- mudar a minha configuração inteira para inglês
+- atualizar a lista de plugins
+- verificar as boas práticas de plugin na [documentação developer](https://lazy.folke.io/developers)
+- adicionar o `vim.notify()` nos keymaps que necessitam (principalmente os de
+  toggle)
+
+- fazer 4 tipos de configs:
+    - notepad -> Configurações para utilizar nvim como o meu notepad
+    - no-plugin -> Mesma configuração do meu VIM porém em lua
+
+- adicionar melhores keymaps e configurações para os plugins:
+    - bullets
+    - hardtime
+    - obsidian
+    - vim-pencil
+    - vim-table-mode
+    - inc-rename
+    - precognition
+
+- arrumar os cabeçalhos de plugins para ficar o mesmo tipo em todos eles (veja
+  os plugins de lsp, vim-be-good e telescope)
+- adicionar uma descrição para cada plugin (veja o exemplo do vim-be-good)
+- criar um "Toggle stay-centered" para o nvim nativo
+
 ## Plugins
 
 Package Manager > <https://github.com/folke/lazy.nvim>
@@ -29,4 +55,16 @@ Package Manager > <https://github.com/folke/lazy.nvim>
 | [Vim-Fugitive](https://github.com/tpope/vim-fugitive)                             | Git commands dentro do Vim                              |
 | [Git Signs](https://github.com/lewis6991/gitsigns.nvim)                           | Git bar signs                                           |
 | [Undotree](https://github.com/mbbill/undotree)                                    | Uma undotree que mostra um histórico de alterações      |
+
+### Pacotes para dar uma olhada depois
+
+- plugins do [Tpope](https://github.com/tpope)
+- neotest -> testes dentro do neovim
+- folke/trouble.nvim -> ferramenta para erros no código
+- refactoring.nvim
+- nvim-autopairs
+- MeanderingProgrammer/harpoon-core.nvim
+- hedyhli/outline.nvim
+- HakonHarnes/img-clip.nvim
+- 3rd/image.nvim
 

@@ -1,49 +1,6 @@
-# NeoVim Config
+# Neovim Config
 
-Repositório Neovim -> <https://github.com/neovim/neovim>
-
-## Things I have to do
-
-- mudar a minha configuração inteira para inglês
-- adicionar um comentário em cada um dos keymaps criados, todo comentário deve
-  começar com \[P\] para eu saber que o comentário foi feito por mim e não
-  pelo neovim ou por algum plugin
-- atualizar a lista de plugins
-- verificar as boas práticas de plugin na [documentação developer](https://lazy.folke.io/developers)
-- adicionar o `vim.notify()` nos keymaps que necessitam (principalmente os de
-  toggle)
-
-- fazer 4 tipos de configs:
-  - minimal -> Apenas as configurações e plugins que julgo necessários
-  - notepad -> Configurações para utilizar nvim como o meu notepad
-  - no-plugin -> Mesma configuração do meu VIM porém em lua
-
-- adicionar melhores keymaps e configurações para os plugins:
-    - bullets
-    - hardtime
-    - obsidian
-    - vim-pencil
-    - vim-table-mode
-    - inc-rename
-    - precognition
-
-- arrumar os cabeçalhos de plugins para ficar o mesmo tipo em todos eles (veja
-  os plugins de lsp, vim-be-good e telescope)
-- adicionar uma descrição para cada plugin (veja o exemplo do vim-be-good)
-
-## Pacotes
-
-### Pacotes para dar uma olhada depois
-
-- plugins do [Tpope](https://github.com/tpope)
-- neotest -> testes dentro do neovim
-- folke/trouble.nvim -> ferramenta para erros no código
-- refactoring.nvim
-- nvim-autopairs
-- MeanderingProgrammer/harpoon-core.nvim
-- hedyhli/outline.nvim
-- HakonHarnes/img-clip.nvim
-- 3rd/image.nvim
+Neovim Repository: <https://github.com/neovim/neovim>
 
 ## Setup
 
@@ -59,13 +16,13 @@ Linux:
 git clone https://github.com/IanSantosOS/.nvim.git $HOME/.config/nvim
 ```
 
-## Referências
+## References
 
 ### Websites
 
 - [Dotfyle](https://dotfyle.com/)
 
-### Repositórios
+### Repositories
 
 - [Kickstart](https://github.com/nvim-lua/kickstart.nvim)
 - [Nvim Starter Kit](https://github.com/bcampolo/nvim-starter-kit)
@@ -74,9 +31,10 @@ git clone https://github.com/IanSantosOS/.nvim.git $HOME/.config/nvim
 - [TJ DeVries](https://github.com/tjdevries/config.nvim)
 - [ThePrimeagen](https://github.com/ThePrimeagen/init.lua)
 - [linkarzu](https://github.com/linkarzu/dotfiles-latest/tree/main/neovim/neobean)
+- [amix](https://github.com/amix/vimrc)
 - [Linux Dabler](https://gitlab.com/linuxdabbler/dotfiles/-/blob/main/.config/nvim/init.lua)
 
-### Vídeos
+### Videos
 
 #### Nerd Signals
 
