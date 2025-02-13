@@ -75,6 +75,12 @@ vim.opt.swapfile = false          -- Desativa a criação de arquivos de troca p
 vim.opt.backup = false            -- Desativa a criação de cópias de segurança dos arquivos antes de serem salvos.
 vim.opt.undofile = true           -- Habilita a gravação de histórico de edições em arquivo para recuperação entre sessões.
 
+-- Search about this configs below:
+-- vim.o.breakindent = true
+-- vim.o.updatetime = 250
+-- vim.o.timeoutlen = 300
+-- vim.o.completeopt = 'menuone,noselect'
+
 
 -- Decide onde colocará a pasta de undodir que foi habilitada pelo "undofile"
 if vim.fn.has("win32") == 1 then
@@ -86,7 +92,7 @@ end
 
 --[ AutoCMD ]--
 
--- Mudar o filetype do EJS para HTML
+-- EJS equals to html filetype
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = "*.ejs",
     callback = function()
@@ -95,7 +101,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 })
 
 
--- Highlight quando está copiando (yanking) o texto
+-- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Hightlight when yanking (copying) text",
     group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
