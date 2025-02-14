@@ -30,7 +30,6 @@ require("lazy").setup({
         { import = "main.plugins" },
         { import = "main.plugins.mini" },
         { import = "main.plugins.markdown" },
-        { import = "main.plugins.learning" },
         { import = "main.plugins.eye-candy" },
     },
     change_detection = { notify = false },

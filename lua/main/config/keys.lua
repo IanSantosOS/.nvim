@@ -96,29 +96,29 @@ set(
 
 --[ Window/Panel ]--
 
-set({ "n", "v" }, "<leader>w", "<C-w>", { silent = true, desc = "[N] Window prefix command" })
-set({ "n", "v" }, "<leader>wh", "<CMD>vsplit<CR>", { silent = true, desc = "[N] Window split horizontally" })
-set({ "n", "v" }, "<leader>wv", "<CMD>split<CR>",  { silent = true, desc = "[N] Window split vertically" })
+set({ "n", "v" }, "<leader>w", "<C-w>", { desc = "[N] Window prefix command" })
+set({ "n", "v" }, "<leader>wh", "<CMD>vsplit<CR>", { desc = "[N] Window split horizontally" })
+set({ "n", "v" }, "<leader>wv", "<CMD>split<CR>",  { desc = "[N] Window split vertically" })
 
-set({ "n", "v" }, "<C-M-k>", "<CMD>resize +5<CR>", { silent = true, desc = "[N] Resize top/bottom +5" })
-set({ "n", "v" }, "<C-M-j>", "<CMD>resize -5<CR>", { silent = true, desc = "[N] Resize top/bottom -5" })
-set({ "n", "v" }, "<C-M-h>", "<CMD>vertical resize -10<CR>", { silent = true, desc = "[N] Resize left/right -10" })
-set({ "n", "v" }, "<C-M-l>", "<CMD>vertical resize +10<CR>", { silent = true, desc = "[N] Resize left/right +10" })
+set({ "n", "v" }, "<C-M-k>", "<CMD>resize +5<CR>", { desc = "[N] Resize top/bottom +5" })
+set({ "n", "v" }, "<C-M-j>", "<CMD>resize -5<CR>", { desc = "[N] Resize top/bottom -5" })
+set({ "n", "v" }, "<C-M-h>", "<CMD>vertical resize -10<CR>", { desc = "[N] Resize left/right -10" })
+set({ "n", "v" }, "<C-M-l>", "<CMD>vertical resize +10<CR>", { desc = "[N] Resize left/right +10" })
 
-set({ "n", "v" }, "<C-M-Up>",    "<CMD>resize +5<CR>", { silent = true, desc = "[N] Resize top/bottom +5" })
-set({ "n", "v" }, "<C-M-Down>",  "<CMD>resize -5<CR>", { silent = true, desc = "[N] Resize top/bottom -5" })
-set({ "n", "v" }, "<C-M-Left>",  "<CMD>vertical resize -10<CR>", { silent = true, desc = "[N] Resize left/right -10" })
-set({ "n", "v" }, "<C-M-Right>", "<CMD>vertical resize +10<CR>", { silent = true, desc = "[N] Resize left/right +10" })
+set({ "n", "v" }, "<C-M-Up>",    "<CMD>resize +5<CR>", { desc = "[N] Resize top/bottom +5" })
+set({ "n", "v" }, "<C-M-Down>",  "<CMD>resize -5<CR>", { desc = "[N] Resize top/bottom -5" })
+set({ "n", "v" }, "<C-M-Left>",  "<CMD>vertical resize -10<CR>", { desc = "[N] Resize left/right -10" })
+set({ "n", "v" }, "<C-M-Right>", "<CMD>vertical resize +10<CR>", { desc = "[N] Resize left/right +10" })
 
-set({ "n", "v" }, "<C-k>", "<CMD>wincmd k<CR>", { silent = true, desc = "[N] Move to the top panel"    })
-set({ "n", "v" }, "<C-j>", "<CMD>wincmd j<CR>", { silent = true, desc = "[N] Move to the bottom panel" })
-set({ "n", "v" }, "<C-h>", "<CMD>wincmd h<CR>", { silent = true, desc = "[N] Move to the left panel"   })
-set({ "n", "v" }, "<C-l>", "<CMD>wincmd l<CR>", { silent = true, desc = "[N] Move to the right panel"  })
+set({ "n", "v" }, "<C-k>", "<CMD>wincmd k<CR>", { desc = "[N] Move to the top panel"    })
+set({ "n", "v" }, "<C-j>", "<CMD>wincmd j<CR>", { desc = "[N] Move to the bottom panel" })
+set({ "n", "v" }, "<C-h>", "<CMD>wincmd h<CR>", { desc = "[N] Move to the left panel"   })
+set({ "n", "v" }, "<C-l>", "<CMD>wincmd l<CR>", { desc = "[N] Move to the right panel"  })
 
-set({ "n", "v" }, "<C-Up>", "<CMD>wincmd k<CR>",    { silent = true, desc = "[N] Move to the top panel"    })
-set({ "n", "v" }, "<C-Down>", "<CMD>wincmd j<CR>",  { silent = true, desc = "[N] Move to the bottom panel" })
-set({ "n", "v" }, "<C-Left>", "<CMD>wincmd h<CR>",  { silent = true, desc = "[N] Move to the left panel"   })
-set({ "n", "v" }, "<C-Right>", "<CMD>wincmd l<CR>", { silent = true, desc = "[N] Move to the right panel"  })
+set({ "n", "v" }, "<C-Up>",    "<CMD>wincmd k<CR>", { desc = "[N] Move to the top panel"    })
+set({ "n", "v" }, "<C-Down>",  "<CMD>wincmd j<CR>", { desc = "[N] Move to the bottom panel" })
+set({ "n", "v" }, "<C-Left>",  "<CMD>wincmd h<CR>", { desc = "[N] Move to the left panel"   })
+set({ "n", "v" }, "<C-Right>", "<CMD>wincmd l<CR>", { desc = "[N] Move to the right panel"  })
 
 --[ Auto Close ]--
 
@@ -133,7 +133,7 @@ set("i", "<", "<><Left>")          -- auto closes <>
 
 --[ Others ]--
 
-set({ "n", "v" }, "<leader>/", "<CMD>let @/=''<CR>", { silent = true, desc = "[N] Clears the search highlight" })
+set({ "n", "v" }, "<leader>/", "<CMD>let @/=''<CR>", { desc = "[N] Clears the search highlight" })
 
 set({ "n", "v" }, "<leader>t8", "<CMD>lua ToggleColorColumn()<CR>", { desc = "[N] Toggle 80 characters color column" })
 

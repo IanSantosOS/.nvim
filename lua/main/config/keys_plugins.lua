@@ -8,7 +8,7 @@ set('n', '<leader>nn', require('notify').dismiss, { desc = "[P] Dismiss notifica
 
 --[ Inc Rename ]--
 
-set("n", "<leader>rn", ":IncRename ", { desc = "[P] Use IncRename" })
+-- set("n", "<leader>rn", ":IncRename ", { desc = "[P] Use IncRename" })
 
 set("n", "<leader>rn", function()
     return ":IncRename " .. vim.fn.expand("<cword>")
@@ -16,10 +16,6 @@ end, {
     expr = true,
     desc = "[P] Use IncRename",
 })
-
---[ Hardtime ]--
-
-set("n", "<leader>ht", "<CMD>Hardtime toggle<CR>", { desc = "[P] Toggle Hardtime" })
 
 --[ Obsidian ]--
 
@@ -29,7 +25,7 @@ set("n", "<leader>mt", "<CMD>ObsidianTags<CR>", { desc = "[P] Search notes by ta
 
 --[ Auto Save ]--
 
-set('n', "<leader>as", ":ASToggle<CR>", { silent = true, desc = "[P] Toggle auto-save" })
+set('n', "<leader>as", "<CMD>ASToggle<CR>", { desc = "[P] Toggle auto-save" })
 
 --[ Stay Centered ]--
 
@@ -71,15 +67,15 @@ set("n", "<leader>h(", function() harpoon:list():replace_at(9) end, { desc = "[P
 
 --[ Vim Tmux Navigator ]--
 
-set("n", "<C-k>", ":TmuxNavigateUp<CR>",    { silent = true, desc = "[P] Move to the top panel" })
-set("n", "<C-j>", ":TmuxNavigateDown<CR>",  { silent = true, desc = "[P] Move to the bottom panel" })
-set("n", "<C-h>", ":TmuxNavigateLeft<CR>",  { silent = true, desc = "[P] Move to the left panel" })
-set("n", "<C-l>", ":TmuxNavigateRight<CR>", { silent = true, desc = "[P] Move to the right panel" })
+set("n", "<C-k>", "<CMD>TmuxNavigateUp<CR>",    { desc = "[P] Move to the top panel" })
+set("n", "<C-j>", "<CMD>TmuxNavigateDown<CR>",  { desc = "[P] Move to the bottom panel" })
+set("n", "<C-h>", "<CMD>TmuxNavigateLeft<CR>",  { desc = "[P] Move to the left panel" })
+set("n", "<C-l>", "<CMD>TmuxNavigateRight<CR>", { desc = "[P] Move to the right panel" })
 
-set("n", "<C-Up>", ":TmuxNavigateUp<CR>",       { silent = true, desc = "[P] Move to the top panel" })
-set("n", "<C-Down>", ":TmuxNavigateDown<CR>",   { silent = true, desc = "[P] Move to the bottom panel" })
-set("n", "<C-Left>", ":TmuxNavigateLeft<CR>",   { silent = true, desc = "[P] Move to the left panel" })
-set("n", "<C-Right>", ":TmuxNavigateRight<CR>", { silent = true, desc = "[P] Move to the right panel" })
+set("n", "<C-Up>",    "<CMD>TmuxNavigateUp<CR>",    { desc = "[P] Move to the top panel" })
+set("n", "<C-Down>",  "<CMD>TmuxNavigateDown<CR>",  { desc = "[P] Move to the bottom panel" })
+set("n", "<C-Left>",  "<CMD>TmuxNavigateLeft<CR>",  { desc = "[P] Move to the left panel" })
+set("n", "<C-Right>", "<CMD>TmuxNavigateRight<CR>", { desc = "[P] Move to the right panel" })
 
 --[ Git Signs ]--
 
@@ -122,11 +118,11 @@ set("n", "<leader>fm4", "<CMD>CellularAutomaton slide<CR>",        { desc = "[P]
 
 --[ Markdown Preview ]--
 
-set('n', '<leader>mp', ':MarkdownPreviewToggle<CR>', { desc = "[P] Toggle markdown preview" })
+set('n', '<leader>mp', '<CMD>MarkdownPreviewToggle<CR>', { desc = "[P] Toggle markdown preview" })
 
 --[ Render Markdown ]--
 
-set('n', '<leader>mr', ':RenderMarkdown toggle<CR>', { desc = "[P] Toggle markdown render" })
+set('n', '<leader>mr', '<CMD>RenderMarkdown toggle<CR>', { desc = "[P] Toggle markdown render" })
 
 --[ Telescope ]--
 
@@ -150,11 +146,11 @@ set('n', '<leader>pf', telescope.current_buffer_fuzzy_find, { desc = "[P] Telesc
 
 -- --[ Mini.Pick ]--
 --
--- -- set('n', '<leader>fg', ":Pick files tool='git'<CR>", { silent = true, desc = "[P] Pick Git" })
+-- -- set('n', '<leader>fg', "<CMD>Pick files tool='git'<CR>", { desc = "[P] Pick Git" })
 -- set('n', '<leader>fg', ":lua MiniExtra.pickers.git_files()", { silent = true, desc = "[P] Pick Git Files" })
--- set('n', '<leader>fp', ":Pick files<CR>",     { silent = true, desc = "[P] Pick Files" })
--- set('n', '<leader>fl', ":Pick grep_live<CR>", { silent = true, desc = "[P] Pick Grep Live" })
+-- set('n', '<leader>fp', "<CMD>Pick files<CR>",     { desc = "[P] Pick Files"     })
+-- set('n', '<leader>fl', "<CMD>Pick grep_live<CR>", { desc = "[P] Pick Grep Live" })
 --
--- set('n', '<leader>b', ":Pick buffers<CR>", { silent = true, desc = "[P] Pick Buffers" })
+-- set('n', '<leader>bb', "<CMD>Pick buffers<CR>",   { desc = "[P] Pick Buffers"   })
 --
--- set('n', '<leader>ph', ":Pick help<CR>", { silent = true, desc = "[P] Pick Help" })
+-- set('n', '<leader>ph', "<CMD>Pick help<CR>",      { desc = "[P] Pick Help"      })
