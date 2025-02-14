@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.surround
 -- https://github.com/echasnovski/mini.surround
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-surround.md
 
 --[ [ RETURN PLUGIN ] ]--
 

@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.ai
 -- https://github.com/echasnovski/mini.ai
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
 
 --[ [ RETURN PLUGIN ] ]--
 

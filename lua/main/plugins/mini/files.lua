@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.files
 -- https://github.com/echasnovski/mini.files
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-files.md
 
 --[ [ RETURN PLUGIN ] ]--
 

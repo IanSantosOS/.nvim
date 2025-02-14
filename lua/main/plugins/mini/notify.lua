@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.notify
 -- https://github.com/echasnovski/mini.notify
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-notify.md
 
 --[ [ RETURN PLUGIN ] ]--
 

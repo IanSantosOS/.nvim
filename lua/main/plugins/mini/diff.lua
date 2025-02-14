@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.diff
 -- https://github.com/echasnovski/mini.diff
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-diff.md
 
 --[ [ RETURN PLUGIN ] ]--
 

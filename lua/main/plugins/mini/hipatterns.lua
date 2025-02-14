@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.hipatterns
 -- https://github.com/echasnovski/mini.hipatterns
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-hipatterns.md
 
 --[ [ EXTRA CONFIGURATION ] ]--
 

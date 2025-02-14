@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.pairs
 -- https://github.com/echasnovski/mini.pairs
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md
 
 -- I just use this plugin because of the <CR> (new line action)
 

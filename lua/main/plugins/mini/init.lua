@@ -7,7 +7,9 @@
 
 --[ [ REPOSITORY ] ]--
 
+-- mini.extra
 -- https://github.com/echasnovski/mini.extra
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-extra.md
 
 --[ [ RETURN PLUGIN ] ]--
 

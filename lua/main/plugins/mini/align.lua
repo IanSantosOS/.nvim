@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.align
 -- https://github.com/echasnovski/mini.align
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-align.md
 
 --[ [ RETURN PLUGIN ] ]--
 

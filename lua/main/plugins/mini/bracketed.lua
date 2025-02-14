@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.bracketed
 -- https://github.com/echasnovski/mini.bracketed
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bracketed.md
 
 --[ [ RETURN PLUGIN ] ]--
 

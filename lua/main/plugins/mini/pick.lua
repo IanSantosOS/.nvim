@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.pick
 -- https://github.com/echasnovski/mini.pick
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pick.md
 
 --[ [ RETURN PLUGIN ] ]--
 

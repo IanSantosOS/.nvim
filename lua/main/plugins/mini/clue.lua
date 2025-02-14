@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.clue
 -- https://github.com/echasnovski/mini.clue
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-clue.md
 
 --[ [ RETURN PLUGIN ] ]--
 

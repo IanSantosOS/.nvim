@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.statusline
 -- https://github.com/echasnovski/mini.statusline
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-statusline.md
 
 --[ [ RETURN PLUGIN ] ]--
 

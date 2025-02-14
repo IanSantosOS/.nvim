@@ -1,6 +1,8 @@
 --[ [ REPOSITORY ] ]--
 
+-- mini.icons
 -- https://github.com/echasnovski/mini.icons
+-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-icons.md
 
 --[ [ RETURN PLUGIN ] ]--
 
