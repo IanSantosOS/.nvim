@@ -56,9 +56,12 @@ set({ "n", "v", "i" }, "<C-s>",      "<CMD>update<CR>",    { desc = "[N] Saves t
 --[ Tab ]--
 
 set("n", "<leader>tn", "<CMD>tabnew<CR>",      { desc = "[N] Creates new tab"       })
+set("n", "<leader>to", "<CMD>tabonly<CR>",     { desc = "[N] Closes other tabs"     })
 set("n", "<leader>tx", "<CMD>tabclose<CR>",    { desc = "[N] Closes current tab"    })
+set("n", "<leader>tm", ":tabmove ",            { desc = "[N] Moves current tab"     })
 set("n", "<leader>pt", "<CMD>tabprevious<CR>", { desc = "[N] Moves to next tab"     })
 set("n", "<leader>nt", "<CMD>tabnext<CR>",     { desc = "[N] Moves to previous tab" })
+set("n", "<leader>te", ':tabedit <C-r>=escape(expand("%:p:h"), " ")<CR>/', { desc = "[N] Opens a new tab with the current buffer's path" })
 
 --[ LSP ]--
 
