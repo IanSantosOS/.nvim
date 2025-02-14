@@ -1,3 +1,9 @@
+--[ [ KEYMAP ] ]--
+
+--[ Hardtime ]--
+
+-- set("n", "<leader>ht", "<CMD>Hardtime toggle<CR>", { desc = "[P] Toggle Hardtime" })
+
 --[ [ REPOSITORIES ] ]--
 
 -- hardtime.nvim

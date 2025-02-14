@@ -2,7 +2,7 @@
 
 --[ Precognition ]--
 
--- vim.keymap.set("n", "<leader>pt", "<CMD>Precognition toggle<CR>", { desc = "Toggle precognition.nvim" })
+-- set("n", "<leader>pt", "<CMD>Precognition toggle<CR>", { desc = "[P] Toggle precognition.nvim" })
 
 --[ [ REPOSITORIES ] ]--
 
@@ -12,7 +12,7 @@
 
 return {
     "tris203/precognition.nvim",
-    --event = "VeryLazy",
+    -- event = "VeryLazy",
     opts = {
         startVisible = true,
         showBlankVirtLine = true,
