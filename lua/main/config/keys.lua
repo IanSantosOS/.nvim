@@ -138,7 +138,7 @@ set("i", "<", "<><Left>")          -- auto closes <>
 
 set({ "n", "v" }, "<leader>/", "<CMD>let @/=''<CR>", { desc = "[N] Clears the search highlight" })
 
-set({ "n", "v" }, "<leader>t8", "<CMD>lua ToggleColorColumn()<CR>", { desc = "[N] Toggle 80 characters color column" })
+set({ "n", "v" }, "<leader>t8", "<CMD>lua ToggleColorColumn()<CR>", { desc = "[N] Toggle highlight column 80" })
 
 --[ Functions ]--
 
