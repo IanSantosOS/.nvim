@@ -108,4 +108,5 @@ Package Manager: <https://github.com/folke/lazy.nvim>
 - hedyhli/outline.nvim
 - HakonHarnes/img-clip.nvim
 - 3rd/image.nvim
+- https://github.com/folke/snacks.nvim (especialmente o snacks.picker)
 
