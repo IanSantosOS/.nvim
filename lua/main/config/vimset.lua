@@ -22,67 +22,74 @@ end
 
 --[ Config ]--
 
-vim.opt.compatible = false        -- Desative o modo de compatibilidade com o VI
+vim.opt.compatible = false        -- Disable VI compatibility mode
 
-vim.opt.termguicolors = true      -- Permite o uso de cores 24-bit
-vim.opt.updatetime = 50           -- Define o intervalo (ms) para ações automáticas (ex.: plugins, eventos CursorHold)
+vim.opt.termguicolors = true      -- Enable 24-bit RGB colors in the terminal
+vim.opt.updatetime = 50           -- Faster update time
 
--- vim.g.netrw_banner = 0            -- Desativa o banner do netrw
--- vim.g.netrw_altv = 1              -- Arquivos abertos usando "v" irão abrir a direita do netrw
--- vim.g.netrw_liststyle = 3         -- Tree view
+-- vim.g.netrw_banner = 0            -- Hide netrw banner
+-- vim.g.netrw_altv = 1              -- Open splits to the right
+-- vim.g.netrw_liststyle = 3         -- Use tree-style view
 -- vim.g.netrw_winsize = 20          -- Window size
 
-vim.cmd('set path+=**')           -- Procura recursivamente
+vim.cmd('set path+=**')           -- Search for files recursively in subdirectories
 
-vim.opt.splitbelow = true         -- Define a criação de paineis (janelas, window, panels) para baixo
-vim.opt.splitright = true         -- Define a criação de paineis (janelas, window, panels) para a direita
+vim.opt.splitbelow = true         -- Open horizontal splits below the current window
+vim.opt.splitright = true         -- Open vertical splits to the right of the current window
 
-vim.opt.syntax = "off"            -- Desativa a syntax padrão do nvim (tenho o treesitter)
-vim.opt.fileencoding = "utf-8"    -- Padrão UTF-8
+vim.opt.syntax = "off"            -- Disable syntax highlighting
 
-vim.opt.number = true             -- Ativa a coluna de números do lado esquerdo
-vim.opt.relativenumber = true     -- Ativa o relative number
-vim.opt.signcolumn = "yes"        -- Sempre exibir um espaço do lado esquerdo da coluna de números para marcadores visuais
--- vim.opt.colorcolumn = '80'     -- Uma coluna visual para delimitar a quantidade de caracteres
+vim.opt.encoding = "utf-8"        -- Set internal encoding to UTF-8
+vim.opt.fileencoding = "utf-8"    -- Save files with UTF-8 encoding
+
+vim.opt.number = true             -- Show line numbers
+vim.opt.relativenumber = true     -- Show relative line numbers
+
+vim.opt.signcolumn = "yes"        -- Always show the sign column
+-- vim.opt.colorcolumn = '80'     -- Highlight column 80 for line length indication
                                   -- I prefer activating it with a keybinding instead
 
-vim.opt.wrap = false              -- Desativa a quebra de linha automática
-vim.opt.scrolloff = 8             -- Distância para ativar a rolagem vertical do texto
-vim.opt.sidescrolloff = 8         -- Distância para ativar a rolagem horizontal do texto
+vim.opt.hidden = true             -- Keep buffers in memory when abandoned
 
-vim.opt.tabstop = 4               -- Define que 1 Tab = 4 Espaços
-vim.opt.softtabstop = 4           -- Os espaços inseridos quando aperta Tab ou BackSpace será o mesmo do tabstop
-vim.opt.shiftwidth = 4            -- Espaços inseridos ao utilizar a tecla de recuo
-vim.opt.expandtab = true          -- Transforma Tab em Espaços
+vim.opt.breakindent = true        -- Maintain indentation on wrapped lines
 
-vim.opt.autoindent = true         -- Indentação automática
-vim.opt.smartindent = true        -- Indentação inteligente
-vim.opt.cindent = true            -- Indentação C automática
+vim.opt.timeoutlen = 1000         -- Set key sequence timeout in milliseconds
 
-vim.opt.smartcase = true          -- Respeita maiúsculas/minúsculas se houver letras maiúsculas na busca.
-vim.opt.ignorecase = true         -- Ignora maiúsculas/minúsculas em buscas
-vim.opt.incsearch = true          -- Realiza as buscas durante a digitação
+vim.opt.completeopt = 'menuone,noinsert,noselect,popup' -- Configure completion behavior
 
-vim.opt.showcmd = true            -- Mostrar a linha de comando (":q" por exemplo)
-vim.opt.cmdheight = 1             -- Tamanho da linha de comando
-vim.opt.showmode = false          -- Não mostrar o mode [Normal, Visual, Insert] dentro do cmd
+vim.opt.wrap = false              -- Disable line wrapping
+vim.opt.scrolloff = 8             -- Keep 8 lines above and below the cursor while scrolling
+vim.opt.sidescrolloff = 8         -- Keep 8 columns to the side when scrolling horizontally
 
-vim.opt.laststatus = 3            -- Sempre mostrar a linha de status na parte inferior ("statusline global")
+vim.opt.smarttab = true           -- Use shiftwidth when inserting tabs
+vim.opt.expandtab = true          -- Convert tabs to spaces
+vim.opt.softtabstop = 4           -- Number of spaces for a tab when editing
+vim.opt.shiftwidth = 4            -- Set indentation width to 4 spaces
+vim.opt.tabstop = 4               -- Display a tab as 4 spaces
 
-vim.o.wildmenu = true             -- Mostrar um menu de opções na linha de comando quando clicar Tab
+vim.opt.autoindent = true         -- Enable automatic indentation based on previous line
+vim.opt.smartindent = true        -- Automatically insert indentation in code blocks
+vim.opt.cindent = true            -- Enable C/C++ style indentation
 
-vim.opt.swapfile = false          -- Desativa a criação de arquivos de troca para recuperação automática em caso de falha ou fechamento inesperado.
-vim.opt.backup = false            -- Desativa a criação de cópias de segurança dos arquivos antes de serem salvos.
-vim.opt.undofile = true           -- Habilita a gravação de histórico de edições em arquivo para recuperação entre sessões.
+vim.opt.ignorecase = true         -- Case-insensitive search
+vim.opt.smartcase = true          -- Case-sensitive if uppercase is used
+vim.opt.incsearch = true          -- Show matches as you type
+vim.opt.hlsearch = true           -- Highlight search results
 
--- Search about this configs below:
--- vim.o.breakindent = true
--- vim.o.updatetime = 250
--- vim.o.timeoutlen = 300
--- vim.o.completeopt = 'menuone,noselect'
+vim.opt.showcmd = true            -- Display command-line
+vim.opt.cmdheight = 1             -- Command-line height
+vim.opt.showmode = false          -- Hide mode display inside cmdline (e.g., -- INSERT --)
 
+vim.opt.laststatus = 3            -- Always show the status line and ONLY the last window
 
--- Decide onde colocará a pasta de undodir que foi habilitada pelo "undofile"
+vim.o.wildmenu = true             -- Enable cmdline completion menu
+
+vim.opt.swapfile = false          -- Disable swap files
+vim.opt.backup = false            -- Disable backup files
+vim.opt.writebackup = false       -- Disable write backup
+vim.opt.undofile = true           -- Enable persistent undo
+
+-- Set undo file directory
 if vim.fn.has("win32") == 1 then
     vim.opt.undodir = vim.fn.expand("$HOME") .. "/AppData/Local/nvim-data/undodir"
 else
