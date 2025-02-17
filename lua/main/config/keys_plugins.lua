@@ -134,6 +134,7 @@ local telescope = require('telescope.builtin')
 -- set('n', '<leader>fl', builtin.live_grep, { desc = "[P] Telescope Live Grep" })
 require('main.telescope.multigrep').setup()
 
+set('n', '<leader>fr', "<CMD>Telescope frecency workspace=CWD<CR>", { desc = "[P] Telescope Find Files (With Frecency)" })
 set('n', '<leader>fp', telescope.find_files,  { desc = "[P] Telescope Find Files" })
 set('n', '<leader>fg', telescope.git_files,   { desc = "[P] Telescope Git Files"  })
 

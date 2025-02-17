@@ -17,6 +17,10 @@ return {
         'nvim-lua/plenary.nvim',
         'nvim-telescope/telescope-ui-select.nvim',
         {
+            'nvim-telescope/telescope-frecency.nvim',
+            version = "*",
+        },
+        {
             'nvim-telescope/telescope-fzf-native.nvim',
             build = 'make'
         }
@@ -50,7 +54,8 @@ return {
             }
         })
 
-        require('telescope').load_extension('ui-select')
         require('telescope').load_extension('fzf')
+        require('telescope').load_extension('frecency')
+        require('telescope').load_extension('ui-select')
     end
 }
