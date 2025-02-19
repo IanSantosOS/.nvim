@@ -80,7 +80,7 @@ set("n", "<C-Right>", "<CMD>TmuxNavigateRight<CR>", { desc = "[P] Move to the ri
 --[ Git Signs ]--
 
 set("n", "<leader>gp", "<CMD>Gitsigns preview_hunk<CR>", { desc = "[P] Preview the diff for the current Git hunk" })
-set("n", "<leader>gt", "<CMD>Gitsigns toggle_current_line_blame<CR>", { desc = "[P] Toggle Git blame annotation for the current line" })
+set("n", "<leader>gb", "<CMD>Gitsigns toggle_current_line_blame<CR>", { desc = "[P] Toggle Git blame annotation for the current line" })
 
 --[ Mini.Files ]--
 
