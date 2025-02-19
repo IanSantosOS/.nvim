@@ -46,8 +46,9 @@ return {
         --[ Opts configuration ]
 
         opts.indent = {
-            -- char = "▏"
-            -- char = "│"
+            -- char = "▏",
+            -- char = "│",
+            -- char = "",
             char = "╎",
             -- highlight = highlight, -- Uncomment this if you want rainbow indent lines
             smart_indent_cap = true,
