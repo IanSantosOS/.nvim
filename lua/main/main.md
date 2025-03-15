@@ -1,4 +1,4 @@
-# IanSantosOs' Main Config
+# IanSantosOS' Main Config
 
 This is where my main Neovim config lives.
 
