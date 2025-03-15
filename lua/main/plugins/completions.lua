@@ -48,14 +48,39 @@ return {
                 ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
                 ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
                 ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+                ["<C-e>"] = cmp.mapping.abort(),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
                 { name = "render-markdown" },
+                { name = "buffer" },
+                { name = "path" },
+            }),
+        })
+
+        -- File types specifics
+        cmp.setup.filetype("gitcommit", {
+            sources = cmp.config.sources({
+                { name = "cmp_git" },
             }, {
                 { name = "buffer" },
+            })
+        })
+
+        -- Command line completion
+        cmp.setup.cmdline("/", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = { { name = "buffer" } },
+        })
+
+        cmp.setup.cmdline("/", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+                { name = "path" },
+            }, {
+                { name = "cmdline" },
             }),
         })
 

@@ -18,10 +18,12 @@ return {
     lazy = false,
     config = function()
         local capabilities = vim.tbl_deep_extend(
-            "force", {},
+            "force",
+            {},
             vim.lsp.protocol.make_client_capabilities(),
             require("cmp_nvim_lsp").default_capabilities()
         )
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
 
         require("mason").setup({})
 
@@ -33,13 +35,39 @@ return {
                 "cssls",
                 "emmet_ls",
             },
-            automatic_installation = false,
+            automatic_installation = true,
             handlers = {
                 function(server_name)
                     require("lspconfig")[server_name].setup({
                         capabilities = capabilities,
                     })
                 end,
+            },
+        })
+
+        require("lspconfig")["emmet_ls"].setup({
+            capabilities = capabilities,
+            filetypes = {
+                "html",
+                "css",
+                "javascript",
+                "javascriptreact",
+                "typescriptreact",
+                "svelte",
+                "eruby",
+                "less",
+                "sass",
+                "scss",
+                "pug",
+                "vue",
+            },
+            init_options = {
+                html = {
+                    options = {
+                        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+                        ["bem.enabled"] = true,
+                    },
+                },
             },
         })
     end,
