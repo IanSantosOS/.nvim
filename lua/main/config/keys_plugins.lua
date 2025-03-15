@@ -2,6 +2,10 @@
 
 local set = vim.keymap.set
 
+--[ Indent Blankline ]--
+
+set('n', '<leader>it', "<CMD>IBLToggle<CR>", { desc = "[P] Toggle indent-blankline"})
+
 --[ Nvim Notify ]--
 
 set('n', '<leader>nn', require('notify').dismiss, { desc = "[P] Dismiss notification"})
@@ -16,12 +20,6 @@ end, {
     expr = true,
     desc = "[P] Use IncRename",
 })
-
---[ Obsidian ]--
-
-set("n", "<leader>mf", "<CMD>ObsidianQuickSwitch<CR>", { desc = "[P] Quickly access my notes" })
-
-set("n", "<leader>mt", "<CMD>ObsidianTags<CR>", { desc = "[P] Search notes by tags" })
 
 --[ Auto Save ]--
 

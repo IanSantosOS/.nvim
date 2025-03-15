@@ -101,7 +101,9 @@ set(
 
 set({ "n", "v" }, "<leader>w", "<C-w>", { desc = "[N] Window prefix command" })
 set({ "n", "v" }, "<leader>wh", "<CMD>vsplit<CR>", { desc = "[N] Window split horizontally" })
-set({ "n", "v" }, "<leader>wv", "<CMD>split<CR>",  { desc = "[N] Window split vertically" })
+set({ "n", "v" }, "<leader>wv", "<CMD>split<CR>",  { desc = "[N] Window split vertically"   })
+set({ "n", "v" }, "<leader>wnh", "<CMD>vnew<CR>",  { desc = "[N] Window split horizontally with an empty file" })
+set({ "n", "v" }, "<leader>wnv", "<CMD>new<CR>",   { desc = "[N] Window split vertically with an empt file"    })
 
 set({ "n", "v" }, "<C-M-k>", "<CMD>resize +5<CR>", { desc = "[N] Resize top/bottom +5" })
 set({ "n", "v" }, "<C-M-j>", "<CMD>resize -5<CR>", { desc = "[N] Resize top/bottom -5" })
