@@ -7,6 +7,10 @@
 -- https://github.com/navarasu/onedark.nvim
 -- https://github.com/rose-pine/neovim
 
+--[ [ EXTRA CONFIGURATION ] ]--
+
+TRANSPARENT_BACKGROUND = true
+
 --[ [ RETURN PLUGINS ] ]--
 
 return {
@@ -21,7 +25,7 @@ return {
                 style = "vulgaris",                                       -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
                 toggle_style_key = nil,                                   -- Keybind to toggle theme style. Leave it nil to disable it, or set it to a string, e.g. "<leader>ts"
                 toggle_style_list = { "vulgaris", "multiplex", "light" }, -- List of styles to toggle between
-                transparent = false,                                      -- Show/hide background
+                transparent = TRANSPARENT_BACKGROUND,                     -- Show/hide background
                 dim_inactive = false,                                     -- Dim inactive windows/buffers
                 term_colors = true,                                       -- Change terminal color as per the selected theme style
                 ending_tildes = false,                                    -- Show the end-of-buffer tildes. By default they are hidden
@@ -72,7 +76,7 @@ return {
                     light = "latte",
                     dark = "mocha",
                 },
-                transparent_background = false,
+                transparent_background = TRANSPARENT_BACKGROUND,
                 show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
                 term_colors = false,        -- sets terminal colors (e.g. `g:terminal_color_0`)
                 dim_inactive = {
@@ -92,7 +96,11 @@ return {
         "nickkadutskyi/jb.nvim",
         lazy = false,
         priority = 1000,
-        config = function()
+        opts = {
+            transparent = TRANSPARENT_BACKGROUND,
+        },
+        config = function(_, opts)
+            require('jb').setup(opts)
             -- vim.cmd("colorscheme jb")
         end,
     },
@@ -108,7 +116,7 @@ return {
             keywordStyle = { italic = false },
             statementStyle = { bold = true },
             typeStyle = {},
-            transparent = false,   -- do not set background color
+            transparent = TRANSPARENT_BACKGROUND, -- do not set background color
             dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
             terminalColors = true, -- define vim.g.terminal_color_{0,17}
             colors = {             -- add/modify theme and palette colors
@@ -134,14 +142,14 @@ return {
         lazy = false,
         priority = 1000,
         opts = {
-            style = "warm",               -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-            transparent = false,          -- Show/hide background
-            term_colors = true,           -- Change terminal color as per the selected theme style
-            ending_tildes = true,         -- Show the end-of-buffer tildes. By default they are hidden
-            cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
+            style = "warm",                       -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+            transparent = TRANSPARENT_BACKGROUND, -- Show/hide background
+            term_colors = true,                   -- Change terminal color as per the selected theme style
+            ending_tildes = true,                 -- Show the end-of-buffer tildes. By default they are hidden
+            cmp_itemkind_reverse = false,         -- reverse item kind highlights in cmp menu
 
             -- toggle theme style ---
-            toggle_style_key = nil,                                                     -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+            toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
             toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
 
             -- Change code style ---
@@ -186,7 +194,7 @@ return {
                 variant = "moon",
                 styles = {
                     italic = false,
-                    transparency = false,
+                    transparency = TRANSPARENT_BACKGROUND,
                 },
             })
 
