@@ -1,3 +1,10 @@
+--[ [ KEYMAP ] ]--
+
+--[ Obsidian ]--
+
+-- set("n", "<leader>mf", "<CMD>ObsidianQuickSwitch<CR>", { desc = "[P] Quickly access my notes" })
+-- set("n", "<leader>mt", "<CMD>ObsidianTags<CR>", { desc = "[P] Search notes by tags" })
+
 --[ [ REPOSITORIES ] ]--
 
 -- https://github.com/epwalsh/obsidian.nvim
@@ -9,7 +16,7 @@ return {
     "epwalsh/obsidian.nvim",
     version = "*",
     lazy = true,
-    enabled = true,
+    enabled = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     ft = "markdown",
     -- Replace the line `ft = "markdown"` with this if you only want to load obsidian.nvim for markdown files in your vault:
