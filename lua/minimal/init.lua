@@ -3,7 +3,8 @@
 
 --[ [ VIMSET ] ]--
 
-vim.cmd('colorscheme slate')      -- Altera o coloscheme do neovim
+-- vim.cmd('colorscheme slate')      -- Altera o coloscheme do neovim
+vim.cmd('colorscheme unokai')      -- Altera o coloscheme do neovim
 
 vim.opt.compatible = false        -- Desative o modo de compatibilidade com o VI
 

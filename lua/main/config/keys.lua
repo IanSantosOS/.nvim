@@ -36,8 +36,10 @@ set("n", "<leader>fp", ":find ",        { desc = "[N] Search file"         })
 
 set("n", "J", "mzJ`z", { desc = "[N] Join lines while keeping the cursor position centered" })
 
-set("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "[N] Move the current selection to the line below" })
-set("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "[N] Move the current selection to the line above" })
+-- set("n", "<M-j>", ":m '.+1<CR>==", { silent = true, desc = "[N] Move the current line down" })
+-- set("n", "<M-k>", ":m '.-2<CR>==", { silent = true, desc = "[N] Move the current line up" })
+set("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "[N] Move the current selection down" })
+set("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "[N] Move the current selection up" })
 
 set({ "n", "v" }, "<C-u>", "<C-u>zz", { desc = "[N] Scroll up half a screen while keeping the cursor centered" })
 set({ "n", "v" }, "<C-d>", "<C-d>zz", { desc = "[N] Scroll down half a screen while keeping the cursor centered" })
