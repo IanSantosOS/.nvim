@@ -13,5 +13,6 @@ return {
     },
     init = function()
         vim.g["pencil#textwidth"] = 80
+        vim.g["pencil#wrapModeDefault"] = "hard"
     end
 }

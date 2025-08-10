@@ -4,13 +4,18 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 local set = vim.keymap.set
 
--- vim.keymap.set("n", "Q", "<nop>")
-
 --[ Config Related ]--
 
 set("n", "<leader><leader>L", "<CMD>source %<CR>",       { desc = "[N] Execute the entire file (vim or lua)" })
 set("n", "<leader><leader>l", "<CMD>.lua<CR>",           { desc = "[N] Execute the current line in lua"      })
 set("v", "<leader><leader>l", ":lua<CR>", { silent = true, desc = "[N] Execute the selected code in lua"     })
+
+--[ Fix ]--
+
+-- ABNT2 doesn't recognize CTRL-]
+-- If you are not brazillian you can ignore this
+vim.keymap.set({ "n", "v" }, "", "<C-]>", { desc = "[N] Jump to a tag"})
+vim.keymap.set({ "i", "c" }, "", "<C-]>", { desc = "[N] Abbreviation"})
 
 --[ Quit ]--
 
@@ -78,11 +83,23 @@ set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[N] Show available cod
 
 --[ Clipboard ]--
 
+set("n",          ",p",         [["0p]],  { desc = "[N] Paste last thing yanked, not deleted"})
+set("n",          ",P",         [["0P]],  { desc = "[N] Paste last thing yanked, not deleted"})
 set("x",          "<leader>p",  [["_dP]], { desc = "[N] Paste over selected text without replacing the default register (avoids overwriting copied text)" })
-set("n",          "<leader>Y",  [["+Y]],  { desc = "[N] Yank the current line into the system clipboard" })
+set("n",          "<leader>Y",  [["+y$]], { desc = "[N] Yank the current line into the system clipboard" })
 set({ "n", "v" }, "<leader>y",  [["+y]],  { desc = "[N] Yank selected text into the system clipboard" })
 set({ "n", "v" }, "<leader>P",  [["+p]],  { desc = "[N] Paste from the system clipboard" })
 set({ "n", "v" }, "<leader>dd", [["_d]],  { desc = "[N] Delete without copying into any register (avoids overwriting the clipboard)" })
+
+--[ Create a Variable ]--
+
+set("i", "<C-r><C-v>", [[<C-r>. = <C-r>"]], { desc = "[N] Create a variable with the text you replaced" })
+
+--[ Deleting in Insert Mode ]--
+
+-- set("i", "<C-l>",   "<Del>",         { desc = "[N] Deletes the character in the right"})
+set("i", "<C-l>", "<C-_><C-w><C-_>", { desc = "[N] Deletes the word in the right"     })
+set("i", "<C-h>", "<C-w>",           { desc = "[N] Deletes the word in the left"      })
 
 --[ Search and Replace ]--
 
@@ -101,11 +118,12 @@ set(
 
 --[ Window/Panel ]--
 
-set({ "n", "v" }, "<leader>w", "<C-w>", { desc = "[N] Window prefix command" })
-set({ "n", "v" }, "<leader>wh", "<CMD>vsplit<CR>", { desc = "[N] Window split horizontally" })
-set({ "n", "v" }, "<leader>wv", "<CMD>split<CR>",  { desc = "[N] Window split vertically"   })
-set({ "n", "v" }, "<leader>wnh", "<CMD>vnew<CR>",  { desc = "[N] Window split horizontally with an empty file" })
-set({ "n", "v" }, "<leader>wnv", "<CMD>new<CR>",   { desc = "[N] Window split vertically with an empt file"    })
+set({ "n", "v" }, "<leader>w",   "<C-w>",           { desc = "[N] Window prefix command" })
+set({ "n", "v" }, "<leader>wh",  "<CMD>vsplit<CR>", { desc = "[N] Window split horizontally" })
+set({ "n", "v" }, "<leader>wv",  "<CMD>split<CR>",  { desc = "[N] Window split vertically"   })
+set({ "n", "v" }, "<leader>wnh", "<CMD>vnew<CR>",   { desc = "[N] Window split horizontally with an empty file" })
+set({ "n", "v" }, "<leader>wnv", "<CMD>new<CR>",    { desc = "[N] Window split vertically with an empt file"    })
+set({ "n", "v" }, "<leader>wnv", "<CMD>new<CR>",    { desc = "[N] Window split vertically with an empt file"    })
 
 set({ "n", "v" }, "<C-M-k>", "<CMD>resize +5<CR>", { desc = "[N] Resize top/bottom +5" })
 set({ "n", "v" }, "<C-M-j>", "<CMD>resize -5<CR>", { desc = "[N] Resize top/bottom -5" })
@@ -129,14 +147,18 @@ set({ "n", "v" }, "<C-Right>", "<CMD>wincmd l<CR>", { desc = "[N] Move to the ri
 
 --[ Auto Close ]--
 
-set("i", "/*", "/**/<Left><Left>") -- auto closes /**/
-set("i", '"', '""<Left>')          -- auto closes ""
-set("i", "'", "''<Left>")          -- auto closes ''
--- set("i", "`", "``<Left>")          -- auto closes ``
-set("i", "(", "()<Left>")          -- auto closes ()
-set("i", "[", "[]<Left>")          -- auto closes []
-set("i", "{", "{}<Left>")          -- auto closes {}
-set("i", "<", "<><Left>")          -- auto closes <>
+-- set("i", "/*", "/**/<Left><Left>") -- auto closes /**/
+-- set("i", '"', '""<Left>')          -- auto closes ""
+-- set("i", "'", "''<Left>")          -- auto closes ''
+-- -- set("i", "`", "``<Left>")          -- auto closes ``
+-- set("i", "(", "()<Left>")          -- auto closes ()
+-- set("i", "[", "[]<Left>")          -- auto closes []
+-- set("i", "{", "{}<Left>")          -- auto closes {}
+-- -- set("i", "<", "<><Left>")          -- auto closes <>
+
+-- set("i", "(<CR>", "(<CR>)<C-o>O") -- auto closes ()
+-- set("i", "[<CR>", "[<CR>]<Left>") -- auto closes []
+-- set("i", "{<CR>", "{<CR>}<Left>") -- auto closes {}
 
 --[ Others ]--
 
@@ -147,10 +169,10 @@ set({ "n", "v" }, "<leader>t8", "<CMD>lua ToggleColorColumn()<CR>", { desc = "[N
 --[ Functions ]--
 
 function ToggleColorColumn()
-    if vim.wo.colorcolumn == "80" then
+    if vim.wo.colorcolumn == "81" then
         vim.wo.colorcolumn = "0"
     else
-        vim.wo.colorcolumn = "80"
+        vim.wo.colorcolumn = "81"
     end
 end
 

@@ -57,6 +57,8 @@ vim.opt.timeoutlen = 1000         -- Set key sequence timeout in milliseconds
 
 vim.opt.completeopt = 'menuone,noinsert,noselect,popup' -- Configure completion behavior
 
+vim.opt.allowrevins = true        -- Allow <Ctrl-_> in Insert mode (enter reverse mode)
+
 vim.opt.wrap = false              -- Disable line wrapping
 vim.opt.scrolloff = 8             -- Keep 8 lines above and below the cursor while scrolling
 vim.opt.sidescrolloff = 8         -- Keep 8 columns to the side when scrolling horizontally

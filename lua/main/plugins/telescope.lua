@@ -27,6 +27,15 @@ return {
     },
     config = function()
         require('telescope').setup({
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<Esc>"] = require('telescope.actions').close,
+                        ["<C-[>"] = require('telescope.actions').close,
+                        ["jk"] = { "<esc>", type = "command" }
+                    },
+                },
+            },
             pickers = {
                 colorscheme = {
                     theme = "dropdown",
@@ -43,6 +52,10 @@ return {
             extensions = {
                 ['ui-select'] = {
                     require('telescope.themes').get_dropdown({})
+                },
+                frecency = {
+                    default_workspace = "CWD",
+                    path_display = { "shorten" },
                 },
                 fzf = {
                     fuzzy = true,                   -- false will only do exact matching

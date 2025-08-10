@@ -114,6 +114,10 @@ set("n", "<leader>fm2", "<CMD>CellularAutomaton scramble<CR>",     { desc = "[P]
 set("n", "<leader>fm3", "<CMD>CellularAutomaton game_of_life<CR>", { desc = "[P] CellularAutomaton | Game of Life" })
 set("n", "<leader>fm4", "<CMD>CellularAutomaton slide<CR>",        { desc = "[P] CellularAutomaton | Slide"        })
 
+--[ Vim Pencil ]--
+
+set('n', '<leader>mt', '<CMD>PencilToggle<CR>', { desc = "[P] Toggle vim pencil" })
+
 --[ Markdown Preview ]--
 
 set('n', '<leader>mp', '<CMD>MarkdownPreviewToggle<CR>', { desc = "[P] Toggle markdown preview" })
@@ -125,15 +129,14 @@ set('n', '<leader>mr', '<CMD>RenderMarkdown toggle<CR>', { desc = "[P] Toggle ma
 --[ Telescope ]--
 
 local telescope = require('telescope.builtin')
+local frecency = require('telescope').extensions.frecency
 
--- This keymap below was changed with the
--- `main/telescope/multigrep.lua` file
---
+-- This keymap below was changed with the `main/telescope/multigrep.lua` file
 -- set('n', '<leader>fl', builtin.live_grep, { desc = "[P] Telescope Live Grep" })
 require('main.telescope.multigrep').setup()
 
-set('n', '<leader>fr', "<CMD>Telescope frecency workspace=CWD<CR>", { desc = "[P] Telescope Find Files (With Frecency)" })
-set('n', '<leader>fp', telescope.find_files,  { desc = "[P] Telescope Find Files" })
+-- set('n', '<leader>fp', telescope.find_files,  { desc = "[P] Telescope Find Files" })
+set('n', '<leader>fp', frecency.frecency,     { desc = "[P] Telescope Find Files (With Frecency)" })
 set('n', '<leader>fg', telescope.git_files,   { desc = "[P] Telescope Git Files"  })
 
 set('n', '<leader>bb',  telescope.buffers,    { desc = "[P] Telescope Buffers" })
